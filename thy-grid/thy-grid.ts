@@ -3,10 +3,10 @@ import { MatMenuTrigger, MatMenu } from '@angular/material/menu';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Sort } from '@angular/material/sort';
-import { ThyObjectType } from '../../thy-services/thy-objects/thy-types.class';
-import { ThyUtilsFunctionsService } from '../../thy-services/thy-utils-functions/thy-utils-functions.service';
 import { ThyGridExportOptions } from './models/thy-grid-export-options.interface';
 import { ThyGridViewModel3 } from './models/thy-grid-view3.class';
+import { ThyObjectType } from '../thy-objects/thy-types.class';
+import { ThyUtilsFunctionsService } from '../thy-utils-functions/thy-utils-functions.service';
 
 enum DragOverPosition {
   None,

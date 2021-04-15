@@ -4,7 +4,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   selector: 'app-thy-layout',
   templateUrl: './thy-layout.component.html',
   styleUrls: [
-    '../../thy-styles/thy-theme-blue.scss',
+    '../thy-styles/thy-style.scss',
     './thy-layout.component.scss'
   ]
 })

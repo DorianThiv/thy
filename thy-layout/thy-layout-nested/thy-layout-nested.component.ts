@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ThyLayoutHorizontalDragEndEvent } from '../models/thy-layout-horizontal-event.class';
 import { IOutputData } from 'angular-split/lib/interface';
 import { ActivatedRoute } from '@angular/router';
-import { ThyPlatformService } from '../../../thy-services/thy-platform/thy-platform.service';
+import { ThyPlatformService } from '../../thy-platform/thy-platform.service';
 
 export const SplitterNestedLeftOpen = 20;
 export const SplitterNestedDownOpen = 55;

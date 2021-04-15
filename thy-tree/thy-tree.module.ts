@@ -7,7 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatRippleModule } from '@angular/material/core';
 import { ThyTreeExtendedComponent } from './thy-tree-extended/thy-tree-extended.component';
 import { ThyTreeSimpleComponent } from './thy-tree-simple/thy-tree-simple.component';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 
 @NgModule({
   declarations: [ThyTreeExtendedComponent, ThyTreeSimpleComponent],

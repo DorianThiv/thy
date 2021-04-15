@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
+import { ThyObjectType } from '../thy-objects/thy-types.class';
 import { ThyTreeViewModel } from './models/thy-tree-view.class';
-import { ThyObjectType } from '../../thy-services/thy-objects/thy-types.class';
-import { ThyLocationType } from '../../../thy-public/thy-locations/models/thy-location-type.class';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
-import { ThyFormatService } from '../../../thy-services/thy-format/thy-format.service';
+import { ThyFormatService } from '../../thy-format/thy-format.service';
 import { ThyFormFieldColorPickerService } from './thy-form-field-color-picker.service';
 
 

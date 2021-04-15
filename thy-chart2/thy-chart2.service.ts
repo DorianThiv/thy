@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ThyRestGetTrendDataStreamResponse } from '../../thy-services/thy-rest/models/thy-rest-responses.class';
 import { ThyAxisYOptions } from './models/thy-chart-options.class';
 import { ThyChartSerie } from './models/thy-chart-item.class';
 import { ThyHighchartsSeriesType } from './models/thy-chart.enum';
 import { ThyChartAxisY } from './models/thy-chart-axis-y.class';
-import { ThyFormatService } from '../../thy-services/thy-format/thy-format.service';
+import { ThyFormatService } from '../thy-format/thy-format.service';
 import { ThyBarType, ThyGraphType } from './models/thy-chart-type.enum.class';
 import { ThyChartAxisX } from './models/thy-chart-axis-x.class';
 import { ThyChartPlotBand } from './models/thy-chart-plot-band.class';
@@ -19,7 +18,7 @@ export class ThyChart2Service {
 
   constructor(private periodService: ThyPeriodService, private formatService: ThyFormatService) { }
 
-  public createSerieFromTrendDataStream(model: ThyRestGetTrendDataStreamResponse) {
+  public createSerieFromTrendDataStream(model: any) {
     if (!model) { return null; }
     const values = [];
     model.Values.forEach(value => values.push([new Date(parseInt(value.d.substr(6), 10)).getTime(), value.v]));

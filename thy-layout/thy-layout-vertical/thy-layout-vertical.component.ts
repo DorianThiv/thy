@@ -1,8 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { IOutputData } from 'angular-split/lib/interface';
-import { ThyPlatformService } from '../../../thy-services/thy-platform/thy-platform.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ThyParametersModel } from '../../../../thy-core/thy-login/models/thy-parameters-model.class';
+import { ThyPlatformService } from '../../thy-platform/thy-platform.service';
 
 @Component({
   selector: 'app-thy-layout-vertical',
@@ -48,12 +47,12 @@ export class ThyLayoutVerticalComponent {
 
   constructor(private route: ActivatedRoute, private platformService: ThyPlatformService) {
     this.position = this.platformService.isMobile ? 'close' : 'open';
-    this.route.queryParamMap.subscribe((param: ParamMap) => {
-      const params = new ThyParametersModel(param);
-      this.position = params.nomenu ? 'close' : 'open';
-      this.isFullscreen = params.fullscreen;
-      this.useToolbarHeight = this.isFullscreen ? false : this.useToolbarHeight;
-    });
+    // this.route.queryParamMap.subscribe((param: ParamMap) => {
+    //   const params = new ThyParametersModel(param);
+    //   this.position = params.nomenu ? 'close' : 'open';
+    //   this.isFullscreen = params.fullscreen;
+    //   this.useToolbarHeight = this.isFullscreen ? false : this.useToolbarHeight;
+    // });
   }
 
   public open(percents = this.SplitterOpenedSize) {

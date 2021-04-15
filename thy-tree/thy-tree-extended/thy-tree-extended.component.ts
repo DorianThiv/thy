@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { ThyTreeComponent } from '../thy-tree.component';
 import { ThyTreeService } from '../thy-tree.service';
-import { ThyBaseTreeModel } from '../../thy-base/models-base/thy-base-tree-model.class';
-import { ThyBaseTreeDto } from '../../thy-base/models-base/thy-base-dto.class';
 import { ThyTreeExtendedViewModel } from '../models/thy-tree-extended-view.class';
-import { ThyRefreshEvent, ThyRefreshType } from '../../../thy-services/thy-notifications/thy-notifications.service';
 import { ThyTreeViewModel } from '../models/thy-tree-view.class';
 import { ThyTreeExtendedChangeEvent } from '../models/thy-tree-change.event';
 
@@ -25,7 +22,7 @@ export class ThyTreeExtendedComponent extends ThyTreeComponent {
    * Initilize `dataSource` list with given models.
    * @param models `ThyBaseTreeModel<ThyBaseTreeDto>[]`
    */
-  public initialize(models: ThyBaseTreeModel<ThyBaseTreeDto>[]) {
+  public initialize(models: any[]) {
     if (models) {
       this._viewModels = models.map(m => new ThyTreeExtendedViewModel(m));
       this.dataSource.data = this.service.getTree(this._viewModels);
@@ -44,12 +41,12 @@ export class ThyTreeExtendedComponent extends ThyTreeComponent {
    * @todo Check how to add correctly an element into the tree to display arrow of parent.
    * @param {ThyRefreshEvent} event `ThyRefreshEvent`
    */
-  public refresh(event?: ThyRefreshEvent, vmClass?: any) {
+  public refresh(event?: any, vmClass?: any) {
     if (this.dataSource && this._viewModels && event && vmClass) {
       let foundedVm: ThyTreeViewModel = null;
       switch (event.type) {
-        case ThyRefreshType.Create:
-        case ThyRefreshType.Update:
+        case 'create':
+        case 'update':
           foundedVm = this._viewModels.find(vm => vm.id === event.id && vm.type === event.objectType);
           if (!foundedVm) {
             if (!event.model) {
@@ -62,7 +59,7 @@ export class ThyTreeExtendedComponent extends ThyTreeComponent {
             // foundedVm.update(event.model);
           }
           break;
-        case ThyRefreshType.Delete:
+        case 'delete':
           const idx = this._viewModels.indexOf(this._viewModels.find(vm => vm.id === event.id && vm.type === event.objectType));
           if (idx !== -1) {
             this._viewModels.splice(idx, 1);

@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { ThyFormFieldColorPickerComponent } from './thy-form-field-color-picker/thy-form-field-color-picker.component';
@@ -24,7 +24,7 @@ import { ThyFormFieldDatetimepickerComponent } from './thy-form-field-datetimepi
 import { ThyFormFieldToolbarInputComponent } from './thy-form-field-toolbar-input/thy-form-field-toolbar-input.component';
 import { ThyFormFieldToolbarDatepickerComponent } from './thy-form-field-toolbar-datepicker/thy-form-field-toolbar-datepicker.component';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatDateFormats } from '@angular/material/core';
-import { ThyTranslateService } from '../../thy-services/thy-translate';
+import { ThyTranslateService } from '../thy-translate';
 
 const FR_FORMAT: MatDateFormats = {
   parse: {

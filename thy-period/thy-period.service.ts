@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ThyTranslateService } from '../thy-translate';
 import { ThyPeriodModel, ThyPeriodDuration } from './models/thy-period-model.class';
 import { ThyPeriodUnit, ThyPeriodUnitStr, ThyPeriodUnitChar, ThyPeriodCurrentStr } from './models/thy-period-unit.enum';
-import { ThyTranslateService } from '../../thy-services/thy-translate';
 
 export interface ThyDateOptions {
   seconds?: number;

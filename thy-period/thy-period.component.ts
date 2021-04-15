@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { ThyDialogBase } from '../thy-dialogs/models/thy-dialog-base.class';
 import { ThyPeriodModel } from './models/thy-period-model.class';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ThyTranslateService } from '../../thy-services/thy-translate';
+import { ThyTranslateService } from '../thy-translate';
 import { ThyPeriodService } from './thy-period.service';
 import { ThyPeriodUnit } from './models/thy-period-unit.enum';
 import { ThyFormFieldSelectOption } from '../thy-form-field/thy-form-field-select/thy-form-field-select-option.class';

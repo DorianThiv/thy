@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 import { ThyDialogsService } from './thy-dialogs.service';
 import { ThyDialogsMessagesComponent } from './thy-dialogs-messages/thy-dialogs-messages.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -18,7 +18,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ThyDialogsConfirmComponent } from './thy-dialogs-confirm/thy-dialogs-confirm.component';
-import { ThyDialogsSourceComponent } from './thy-dialogs-source/thy-dialogs-source.component';
 import { ThyDialogsLayoutComponent } from './thy-dialogs-layout/thy-dialogs-layout.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThyFormFieldModule } from '../thy-form-field/thy-form-field.module';
@@ -51,7 +50,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   declarations: [
     ThyDialogsMessagesComponent,
     ThyDialogsConfirmComponent,
-    ThyDialogsSourceComponent,
     ThyDialogsLayoutComponent
   ],
   exports: [

@@ -3,12 +3,12 @@ import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ThyFileImportService } from './thy-file-import.service';
 import { ThyDialogsService } from '../thy-dialogs/thy-dialogs.service';
-import { ThyTranslateService } from '../../thy-services/thy-translate';
+import { ThyTranslateService } from '../thy-translate';
 
 @Component({
   selector: 'app-thy-file-import',
   templateUrl: './thy-file-import.component.html',
-  styleUrls: ['../../thy-styles/thy-theme-blue.scss', './thy-file-import.component.scss']
+  styleUrls: ['../thy-styles/thy-style.scss', './thy-file-import.component.scss']
 })
 export class ThyFileImportComponent {
 

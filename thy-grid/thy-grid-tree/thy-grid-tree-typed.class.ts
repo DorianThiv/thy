@@ -1,10 +1,9 @@
 import { ThyGridTyped } from '../thy-grid-typed.class';
 import { ActivatedRoute } from '@angular/router';
-import { ThyUtilsFunctionsService } from '../../../thy-services/thy-utils-functions/thy-utils-functions.service';
-import { ThyRefreshEvent, ThyRefreshType } from '../../../thy-services/thy-notifications/thy-notifications.service';
 import { Sort } from '@angular/material/sort';
 import { ThyGridTreeViewModel } from '../models/thy-grid-tree-view.class';
 import { OnInit, ChangeDetectorRef, Directive } from '@angular/core';
+import { ThyUtilsFunctionsService } from '../../thy-utils-functions/thy-utils-functions.service';
 
 @Directive()
 export abstract class ThyGridTreeTyped<TViewModel extends ThyGridTreeViewModel<any>> extends ThyGridTyped<TViewModel> implements OnInit {
@@ -40,12 +39,12 @@ export abstract class ThyGridTreeTyped<TViewModel extends ThyGridTreeViewModel<a
 
     public abstract initialize(...args: any[]);
 
-    public abstract refresh(event?: ThyRefreshEvent);
+    public abstract refresh(event?: any);
 
     protected getTree(models: TViewModel[], keepStates = false, sort?: Sort) {
       if (!models) { return []; }
       models.forEach(vm => {
-        if (!models.find(v => v.Id === vm.ParentId)) { vm.parent = null; }
+        if (!models.find(v => (v as any).Id === vm.ParentId)) { vm.parent = null; }
       });
       const _locationsList: TViewModel[] = [];
       let filteredModels = models ? models.filter(loc => !loc.ParentId) : [];
@@ -57,7 +56,7 @@ export abstract class ThyGridTreeTyped<TViewModel extends ThyGridTreeViewModel<a
 
     protected addToList(modelList: TViewModel[], modelsToAdd: TViewModel[], allModels: TViewModel[], keepStates: boolean, sort: Sort) {
       modelsToAdd.forEach(sloc => {
-        let children = allModels.filter(loc => (loc.ParentId === sloc.Id));
+        let children = allModels.filter(loc => (loc.ParentId === (sloc as any).Id));
         if (children) {
           if (sort) {
             children = this.sortList(children, sort);

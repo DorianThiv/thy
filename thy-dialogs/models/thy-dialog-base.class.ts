@@ -1,6 +1,6 @@
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
-import { ThyKeyCode } from '../../../thy-models/thy-keycode.constants';
+import { ThyKeyCode } from '../../thy-utils-functions/thy-keycode.constants';
 
 export abstract class ThyDialogBase {
 

@@ -1,6 +1,6 @@
-import { ThyBaseViewModel } from '../../thy-base/models-view/thy-base-view.class';
 
-export class ThyGridViewModel<T> extends ThyBaseViewModel {
+
+export class ThyGridViewModel<T> {
 
     public Model: T;
 
@@ -27,7 +27,7 @@ export class ThyGridViewModel<T> extends ThyBaseViewModel {
     public selected = false;
 
     constructor(model?: T) {
-        super(model);
+        this.Model = model;
     }
 
 }

@@ -1,9 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { dictionary } from './translations';
 import { IntlService } from '@progress/kendo-angular-intl';
-import { ThyCookiesService } from '../thy-cookies/thy-cookies.service';
 import { ThyLangIdentifiers } from './models/thy-translate.enum';
-import { ThyPeriodUnit } from '../../thy-modules/thy-period/models/thy-period-unit.enum';
+import { ThyPeriodUnit } from '../thy-period/models/thy-period-unit.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -150,13 +149,14 @@ export class ThyTranslateService {
 
     public langChanged = new EventEmitter();
 
-    constructor(private cookiesService: ThyCookiesService, private intl: IntlService) {
+    constructor(private intl: IntlService) {
         this._default = this.supportedLangs[0];
     }
 
     public initialize(lang: string) {
-        const cookieLang = this.cookiesService.get('ck_lang');
-        lang = cookieLang ? cookieLang : this.navigatorLang(lang);
+        // const cookieLang = this.cookiesService.get('ck_lang');
+        // lang = cookieLang ? cookieLang : this.navigatorLang(lang);
+        lang = this.navigatorLang(lang);
         if (lang && this.supportedLangs.find(lg => lg.value === lang)) {
             this.use(lang);
         } else {
@@ -166,7 +166,7 @@ export class ThyTranslateService {
 
     public use(lang: string): void {
         this._identifier = lang;
-        this.cookiesService.set('ck_lang', lang);
+        // this.cookiesService.set('ck_lang', lang);
         this.langChanged.emit();
     }
 

@@ -1,5 +1,5 @@
 import { Inject, Pipe, PipeTransform } from '@angular/core';
-import { ThyPeriodUnit } from '../../thy-modules/thy-period/models/thy-period-unit.enum';
+import { ThyPeriodUnit } from '../thy-period/models/thy-period-unit.enum';
 import { ThyFormatService } from './thy-format.service';
 
 @Pipe({

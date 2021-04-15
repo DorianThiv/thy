@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import * as Highcharts from 'highcharts/highcharts';
 import HighchartsHeatmap from 'highcharts/modules/heatmap';
-import { ThyFormatService } from 'src/app/thy-shared/thy-services/thy-format/thy-format.service';
-import { ThyTranslateService } from 'src/app/thy-shared/thy-services/thy-translate';
-import { isNullOrUndefined } from 'src/app/thy-shared/thy-services/thy-utils-functions/thy-utils-functions.service';
+import { ThyFormatService } from '../../thy-format/thy-format.service';
+import { ThyTranslateService } from '../../thy-translate';
+import { isNullOrUndefined } from '../../thy-utils-functions/thy-utils-functions.service';
 import { ThyChart2Component } from '../thy-chart2.component';
 
 HighchartsHeatmap(Highcharts);

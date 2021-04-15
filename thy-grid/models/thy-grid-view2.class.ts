@@ -1,4 +1,3 @@
-import { ThyBaseViewModel } from '../../thy-base/models-view/thy-base-view.class';
 
 export class ThyGridBaseViewModel {
 

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IntlService } from '@progress/kendo-angular-intl';
-import { IThyAttributesService } from '../../thy-modules/thy-base/thy-attributes-service.interface';
-import { ThyPeriodModel } from '../../thy-modules/thy-period/models/thy-period-model.class';
-import { ThyPeriodUnit } from '../../thy-modules/thy-period/models/thy-period-unit.enum';
+import { ThyPeriodModel } from '../thy-period/models/thy-period-model.class';
+import { ThyPeriodUnit } from '../thy-period/models/thy-period-unit.enum';
 import { ThyTranslateService } from '../thy-translate';
 import { isNullOrUndefined, isNumber } from '../thy-utils-functions/thy-utils-functions.service';
 
@@ -296,7 +295,7 @@ export class ThyFormatService {
    * Replace attributes inside `{}`
    * @param str
    */
-  public replaceAttributes(service: IThyAttributesService, str: string, id?: number, period?: ThyPeriodModel) {
+  public replaceAttributes(service: any, str: string, id?: number, period?: ThyPeriodModel) {
     if (!str || !service) { return str; }
     const count = (str.match(/{/g) || []).length;
     if (!count) { return str; }

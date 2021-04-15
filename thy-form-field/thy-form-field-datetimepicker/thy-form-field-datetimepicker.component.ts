@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 import { FormControl } from '@angular/forms';
-import { ThyTranslateService } from '../../../thy-services/thy-translate';
+import { ThyTranslateService } from '../../thy-translate';
 import { DateAdapter } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker/datepicker-input-base';
 

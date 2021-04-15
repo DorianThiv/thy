@@ -1,6 +1,6 @@
 
 import { Value } from '../../../../thy-models/thy-value.class';
-import { FormatService } from '../../../../thy-services/thy-format/format.service';
+import { FormatService } from '../../../thy-format/format.service';
 import { isNullOrUndefined } from '../../../../thy-services/thy-utils-functions/thy-utils-functions.service';
 
 export class ThyConsumptionGridModel {

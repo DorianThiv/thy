@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ThyChart2Component } from '../thy-chart2.component';
 import * as Highcharts from 'highcharts';
-import { ThyTranslateService } from '../../../thy-services/thy-translate';
-import { ThyFormatService } from '../../../thy-services/thy-format/thy-format.service';
+import { ThyTranslateService } from '../../thy-translate';
+import { ThyFormatService } from '../../thy-format/thy-format.service';
 import { ThyChartGraphLegendEvent } from '../models/thy-chart-graph-legend-event.class';
 
 declare var require: any;

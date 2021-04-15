@@ -5,7 +5,7 @@ import { ThyConsumptionGridModel, ThyConsumptionGridModel2, ThyConsumptionGridTo
 import { ThyObjectType } from "../../../../thy-services/thy-objects/thy-types.class";
 import { ThyPeriodUnit } from "../../../thy-period/models/thy-period-unit.enum";
 import { ThyPeriodModel } from "../../../thy-period/models/thy-period-model.class";
-import { ThyTranslateService } from "../../../../thy-services/thy-translate";
+import { ThyTranslateService } from "../../../thy-translate";
 import { ThyPeriodService } from "../../../thy-period/thy-period.service";
 import { MatSelectChange } from "@angular/material/select";
 import { ThyGraphComponent } from "../thy-graph.component";

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThyGridNoRecordsComponent } from './thy-grid-no-records/thy-grid-no-records.component';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 
 
 

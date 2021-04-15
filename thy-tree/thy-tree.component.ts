@@ -4,8 +4,8 @@ import { MatTreeFlatDataSource, MatTreeFlattener, MatTree } from '@angular/mater
 import { ThyTreeViewModel } from './models/thy-tree-view.class';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { ThyTreeService } from './thy-tree.service';
-import { ThyObjectType } from '../../thy-services/thy-objects/thy-types.class';
 import { ThyTreeExtendedChangeEvent } from './models/thy-tree-change.event';
+import { ThyObjectType } from '../thy-objects/thy-types.class';
 
 const NodeAll = -5;
 

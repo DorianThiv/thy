@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ThyTranslateService } from '../../../thy-services/thy-translate';
+import { ThyTranslateService } from '../../thy-translate';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 
 @Component({

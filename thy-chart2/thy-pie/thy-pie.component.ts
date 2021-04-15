@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ThyChart2Component } from '../thy-chart2.component';
-import { ThyTranslateService } from '../../../thy-services/thy-translate';
-import { ThyFormatService } from '../../../thy-services/thy-format/thy-format.service';
+import { ThyTranslateService } from '../../thy-translate';
+import { ThyFormatService } from '../../thy-format/thy-format.service';
 
 @Component({
   selector: 'app-thy-pie',

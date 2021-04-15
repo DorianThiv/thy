@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ThyPeriodComponent } from './thy-period.component';
 import { ThyFormFieldModule } from '../thy-form-field/thy-form-field.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';

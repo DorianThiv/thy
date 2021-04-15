@@ -1,5 +1,5 @@
+import { ThyObjectType } from "../../thy-objects/thy-types.class";
 
-import { ThyObjectType } from '../../../thy-services/thy-objects/thy-types.class';
 
 export abstract class ThyTreeViewModel {
 

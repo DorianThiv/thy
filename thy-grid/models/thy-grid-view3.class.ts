@@ -1,4 +1,3 @@
-import { ThyObjectType } from "../../../thy-services/thy-objects/thy-types.class";
 
 export class ThyGridViewModel3 {
 

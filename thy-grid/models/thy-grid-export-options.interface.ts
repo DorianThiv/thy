@@ -1,4 +1,5 @@
-import { ThyFileSaverService } from '../../../thy-services/thy-file-saver/thy-file-saver.service';
+import { ThyFileSaverService } from "../../thy-file-saver/thy-file-saver.service";
+
 
 export interface ThyGridExportOptions {
     properties: string[];

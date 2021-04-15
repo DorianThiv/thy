@@ -9,7 +9,7 @@ import { ThyPieComponent } from './thy-pie/thy-pie.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { ThyTranslateModule } from '../../thy-services/thy-translate/thy-translate.module';
+import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
 import { ThyHeatmapComponent } from './thy-heatmap/thy-heatmap.component';
 
 @NgModule({

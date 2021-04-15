@@ -1,5 +1,4 @@
 import { Component} from '@angular/core';
-import { ThyRefreshEvent, ThyRefreshType } from '../../../thy-services/thy-notifications/thy-notifications.service';
 import { ThyTreeComponent } from '../thy-tree.component';
 import { ThyTreeService } from '../thy-tree.service';
 import { ThyTreeSimpleViewModel } from '../models/thy-tree-simple-view.class';
@@ -35,12 +34,12 @@ export class ThyTreeSimpleComponent extends ThyTreeComponent {
     this.dataSource.data = this._viewModels;
   }
 
-  public refreshEvent(event: ThyRefreshEvent, viewModels: ThyTreeViewModel[], vmClass: any) {
+  public refreshEvent(event: any, viewModels: ThyTreeViewModel[], vmClass: any) {
     if (this.dataSource && viewModels && event && vmClass) {
       let foundedVm = null;
       switch (event.type) {
-        case ThyRefreshType.Create:
-        case ThyRefreshType.Update:
+        case 'create':
+        case 'update':
           foundedVm = viewModels.find(vm => vm.id === event.id && vm.type === event.objectType);
           if (!foundedVm) {
             if (!event.model) {
@@ -52,7 +51,7 @@ export class ThyTreeSimpleComponent extends ThyTreeComponent {
             foundedVm.update(event.model);
           }
           break;
-        case ThyRefreshType.Delete:
+        case 'delete':
           const idx = viewModels.indexOf(viewModels.find(vm => vm.id === event.id && vm.type === event.objectType));
           if (idx !== -1) {
             viewModels.splice(idx, 1);

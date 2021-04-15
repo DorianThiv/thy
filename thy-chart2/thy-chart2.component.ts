@@ -1,9 +1,9 @@
 import { Component, ViewChild, ElementRef, DoCheck, Input, Output, EventEmitter } from '@angular/core';
 import { HighchartsChartComponent } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
-import { ThyTranslateService } from '../../thy-services/thy-translate';
-import { ThyFormatService } from '../../thy-services/thy-format/thy-format.service';
+import { ThyTranslateService } from '../thy-translate';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
+import { ThyFormatService } from '../thy-format/thy-format.service';
 
 @Component({
   selector: 'app-thy-chart2',

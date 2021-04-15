@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ThyDialogsMessagesComponent } from './thy-dialogs-messages/thy-dialogs-messages.component';
 import { ThyDialogConfirmResponse, ThyDialogsConfirmComponent, IDialogMessage } from './thy-dialogs-confirm/thy-dialogs-confirm.component';
-import { ThyDialogsSourceComponent, ThySourceResponse } from './thy-dialogs-source/thy-dialogs-source.component';
-import { ThyObjectType } from '../../thy-services/thy-objects/thy-types.class';
 import { ThyPeriodComponent } from '../thy-period/thy-period.component';
 import { ThyPeriodModel } from '../thy-period/models/thy-period-model.class';
 import { Observable } from 'rxjs/internal/Observable';
@@ -43,19 +41,6 @@ export class ThyDialogsService {
     const dialogRef = this.matDialogService.open(ThyPeriodComponent, {
       width: '800px',
       data: data ? data : {}
-    });
-    return dialogRef.afterClosed();
-  }
-
-  /**
-   * Specify thy types (`ThyObjectType`) to apply a reference
-   * @param data { types: ThyObjectType[] }
-   */
-  public source(data: { types: ThyObjectType[] }): Observable<ThySourceResponse> {
-    const dialogRef = this.matDialogService.open(ThyDialogsSourceComponent, {
-      width: '900px',
-      height: '90%',
-      data: data
     });
     return dialogRef.afterClosed();
   }
