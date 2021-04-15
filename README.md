@@ -2,6 +2,8 @@
 
 Personnal library.
 
+Will improve as NPM package.
+
 ## Required modules
 
 * `angular-split`
