@@ -1,0 +1,32 @@
+
+.mat-select-arrow {
+    color: #444;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+    vertical-align: baseline !important;
+}
+
+.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: rgb(44, 44, 44)
+}
+
+.thy-select-trigger-text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.thy-select-trigger-icon {
+    width: 15px !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    font-size: 15px !important;
+    margin-right: 10px !important;
+}
+
+.thy-select-option-icon {
+    width: 15px !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    font-size: 15px !important;
+}

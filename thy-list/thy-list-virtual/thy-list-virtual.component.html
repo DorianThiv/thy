@@ -1,0 +1,36 @@
+<!-- List -->
+<app-thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" (clickAction)="onAdd()">
+
+    <mat-list class="list ui-g-12" [ngStyle]="style" (contextmenu)="onContextMenu($event)">
+
+        <cdk-virtual-scroll-viewport [itemSize]="itemSize" [ngStyle]="styleViewport" class="list-viewport">
+
+            <mat-list-item *cdkVirtualFor="let item of list" class="ui-g-12 list-item" [ngClass]="{'list-item-selected': item.selected}" (click)="onSelection($event, item)" (contextmenu)="onContextMenu($event, item)">
+    
+                <div *ngIf="item.icon" class="ui-g-1">
+                    <mat-icon mat-list-icon class="ui-g-2 list-icon">{{ item.icon }}</mat-icon>
+                </div>
+                
+                <div [ngClass]="editable ? 'ui-g-10 list-content-item' : 'ui-g-12 list-content-item'">
+                    <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+                </div>
+    
+                <div *ngIf="editable" class="ui-g-2">
+                    <button mat-icon-button *ngIf="editable && item.editing" class="list-button-suffix" (click)="onValid(item)"><mat-icon class="list-icon-suffix">check</mat-icon></button>
+                    <button mat-icon-button *ngIf="editable && item.editing" class="list-button-suffix" (click)="onCancel(item)"><mat-icon class="list-icon-suffix">cancel</mat-icon></button>
+                    <button mat-icon-button *ngIf="editable && !item.editing" class="list-button-suffix" (click)="onEdit(item)"><mat-icon class="list-icon-suffix">edit</mat-icon></button>
+                    <button mat-icon-button *ngIf="editable && !item.editing" class="list-button-suffix" (click)="onDelete(item)"><mat-icon class="list-icon-suffix">delete</mat-icon></button>
+                </div>
+            </mat-list-item>
+
+        </cdk-virtual-scroll-viewport>
+
+    </mat-list>
+
+</app-thy-fieldset>
+
+<div style="position: fixed"
+  [style.left.px]="contextMenuPosition.x"
+  [style.top.px]="contextMenuPosition.y"
+  [matMenuTriggerFor]="menu">
+</div>

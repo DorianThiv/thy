@@ -1,0 +1,59 @@
+// Mat List
+
+.list {
+    height: 100%;
+    padding-top: 0px !important;
+    display: unset !important;
+}
+
+.list-viewport {
+    height: 100%;
+}
+
+.list-item {
+    height: 25px !important;
+    font-size: 0.9em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.list-content-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-h4 {
+    font-size: 12px !important;
+}
+
+.list-info {
+    font-size: 11px !important;
+}
+
+.list-icon {
+    height: 18px !important;
+    width: 18px !important;
+    line-height: 18px !important;
+    font-size: 18px !important;
+    color: #444;
+}
+
+.list-button-suffix {
+    height: 24px !important;
+    width: 24px !important;
+    line-height: 18px !important;
+    // vertical-align: super !important;
+}
+
+.list-icon-suffix {
+    height: 18px !important;
+    width: 18px !important;
+    line-height: 18px !important;
+    font-size: 18px !important;
+    color: #444;
+}
+
+.list-item-selected {
+    background-color: rgba(77, 151, 204, 0.3) !important;
+}

@@ -1,0 +1,66 @@
+<mat-form-field *ngIf="!noFormField" [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" [color]="color">
+  <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+  <input matInput *ngIf="!useValue" #trigger [formControl]="formController" [matAutocomplete]="auto" (input)="onInput($event.target.value)" required="{{ required }}" name="{{ name }}" type="{{ type }}" autocomplete="off">
+  <input matInput *ngIf="useValue" #trigger [(ngModel)]="value" (ngModelChange)="onValueChange()" [matAutocomplete]="auto" (input)="onInput($event.target.value)" name="{{ name }}" type="{{ type }}" autocomplete="off">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="valueChange.emit($event.option.value)">
+    <mat-option *ngFor="let model of filteredList | async" class="thy-autocomplete-option-tree" [value]="model" [hidden]="model.isHidden">
+      <span [ngStyle]="{'margin-left': 5 * model.level - 1 + 'px'}">
+        <mat-icon class="thy-autocomplete-option-icon" [ngStyle]="{'visibility': !model.children || model.children.length === 0 ? 'hidden' : 'visible'}" (click)="onExpand($event, model)">
+          {{ model.expanded ? 'expand_more' : 'chevron_right' }}
+        </mat-icon>
+        {{ model.name }}
+      </span>
+    </mat-option>
+  </mat-autocomplete>
+  <button mat-button *ngIf="suffix" matSuffix mat-icon-button class="thy-suffix-button" (click)="onSuffix($event)">
+    <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>
+  </button>
+  <button mat-button matSuffix mat-icon-button class="thy-suffix-button" (click)="onDropdown()">
+    <mat-icon class="thy-suffix-icon">arrow_drop_down</mat-icon>
+  </button>
+  <button mat-button matSuffix mat-icon-button *ngIf="showDeleteSuffix && formController?.value" class="thy-suffix-button" (click)="onDelete()">
+    <mat-icon class="thy-suffix-icon">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<ng-container *ngIf="noFormField">
+
+  <input #trigger
+    *ngIf="!useValue"
+    [ngClass]="getClasses()"
+    [ngStyle]="style"
+    placeholder="{{ label | translate }}
+    {{ labelDetails | translate }}"
+    [formControl]="formController"
+    [matAutocomplete]="auto"
+    (input)="onInput($event.target.value)"
+    (click)="onDropdown()"
+    name="{{ name }}"
+    type="{{ type }}"
+    autocomplete="off">
+  <input #trigger
+    *ngIf="useValue"
+    [ngClass]="getClasses()"
+    [ngStyle]="style"
+    placeholder="{{ label | translate }}
+    {{ labelDetails | translate }}"
+    [(ngModel)]="value"
+    (ngModelChange)="onValueChange()"
+    [matAutocomplete]="auto"
+    (input)="onInput($event.target.value)"
+    (click)="onDropdown()"
+    name="{{ name }}"
+    type="{{ type }}"
+    autocomplete="off">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="valueChange.emit($event.option.value)" (opened)="onOpenPane()" (closed)="onClosePane()">
+    <mat-option *ngFor="let model of filteredList | async" class="thy-autocomplete-option-tree" [value]="model" [hidden]="model.isHidden">
+      <span [ngStyle]="{'margin-left': 5 * model.level - 1 + 'px'}">
+        <mat-icon class="thy-autocomplete-option-icon" [ngStyle]="{'visibility': !model.children || model.children.length === 0 ? 'hidden' : 'visible'}" (click)="onExpand($event, model)">
+          {{ model.expanded ? 'expand_more' : 'chevron_right' }}
+        </mat-icon>
+        {{ model.name }}
+      </span>
+    </mat-option>
+  </mat-autocomplete>
+
+</ng-container>

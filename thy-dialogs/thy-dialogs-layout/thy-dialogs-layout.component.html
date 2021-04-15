@@ -1,0 +1,45 @@
+
+<ng-container >
+
+    <!-- Header -->
+    <ng-container *ngIf="showHeader">
+
+        <!-- Title -->
+        <div id="thy-dialog-drag-container" cdkDragRootElement=".cdk-overlay-pane" cdkDragBoundary=".cdk-overlay-container" cdkDrag cdkDragHandle></div>
+        <h1 mat-dialog-title>
+            {{ title | translate }}
+            <h2 mat-dialog-title *ngIf="subtitle" class="thy-dialog-subtitle"> - {{ subtitle | translate }} </h2>
+            <button mat-button *ngIf="action" id="thy-action-button" (click)="clickAction.emit()">
+                <mat-icon>{{ actionIcon }}</mat-icon>
+            </button>
+            <!-- Header action -->
+            <ng-content select="[header]"></ng-content>
+        </h1>
+
+        <!-- Close -->
+        <button mat-icon-button *ngIf="showCloseButton" class="thy-dialog-btn-close" (click)="close.emit()"><mat-icon>close</mat-icon></button>
+
+    </ng-container>
+
+    <!-- Content -->
+    <mat-dialog-content #content class="thy-dialog-content">
+        <ng-content></ng-content>
+    </mat-dialog-content>   
+
+    <!-- Action -->
+    <mat-dialog-actions *ngIf="showBottomAction">
+        <ng-content select="[action]"></ng-content>
+    </mat-dialog-actions>
+
+    <!-- Footer -->
+    <mat-dialog-actions align="end">
+        <ng-container *ngIf="validation">
+            <button mat-button [class.thy-dialog-spinner]="longLoading" (click)="validate.emit()" [disabled]="invalid || loading"> {{ validLabel | translate }} </button>
+            <button mat-button (click)="close.emit()">{{ labelClose | translate }}</button>
+        </ng-container>
+        <ng-container *ngIf="!validation">
+            <button mat-button (click)="close.emit()">{{ '@global-close' | translate }}</button>
+        </ng-container>
+    </mat-dialog-actions>
+
+</ng-container>

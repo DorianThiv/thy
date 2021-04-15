@@ -1,0 +1,75 @@
+<mat-form-field *ngIf="!noFormField" [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" [color]="color">
+  <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+  <!-- Inpout FormControl -->
+  <input matInput *ngIf="!useValue" #trigger
+    [formControl]="formController"
+    [matAutocomplete]="auto"
+    [disabled]="disabled"
+    (input)="onInputChange($event.target.value)"
+    [required]="required"
+    [name]="name"
+    [type]="type"
+    autocomplete="off">
+  <!-- Inupt Value -->
+  <input matInput *ngIf="useValue" #trigger
+    [(ngModel)]="value"
+    (ngModelChange)="onValueChange()"
+    [matAutocomplete]="auto"
+    [disabled]="disabled"
+    (input)="onInputChange($event.target.value)"
+    [name]="name"
+    [type]="type"
+    autocomplete="off">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="valueChange.emit($event.option.value)">
+    <mat-option *ngFor="let model of filteredList | async" [value]="model">
+      {{ this.displayWith(model) }}
+    </mat-option>
+  </mat-autocomplete>
+  <!-- Suffix -->
+  <button mat-button *ngIf="suffix" matSuffix mat-icon-button class="thy-suffix-button" [disabled]="disabled || suffixDisabled" (click)="onSuffix($event)">
+    <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>
+  </button>
+  <!-- Suffix sec -->
+  <button *ngIf="suffixSec && !suffixMenu && showSuffixSec" mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="disabled || suffixSecDisabled" (click)="onSuffixSec($event)">
+    <mat-icon class="thy-suffix-icon">{{ suffixSec }}</mat-icon>
+  </button>
+  <!-- Dropdown arrow -->
+  <button mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="disabled || suffixDisabled" (click)="onDropdown()">
+    <mat-icon class="thy-suffix-icon">arrow_drop_down</mat-icon>
+  </button>
+  <!-- Delete Button -->
+  <button mat-button matSuffix mat-icon-button *ngIf="showDeleteSuffix && (formController?.value || value)" [disabled]="disabled" class="thy-suffix-button" (click)="onDelete()">
+    <mat-icon class="thy-suffix-icon">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<ng-container *ngIf="noFormField">
+
+  <div [ngClass]="classesHtml">
+    <input matInput *ngIf="!useValue" #trigger
+      [ngStyle]="style"
+      placeholder="{{ label | translate }} {{ labelDetails | translate }}"
+      [formControl]="formController"
+      [matAutocomplete]="auto"
+      (input)="onInputChange($event.target.value)"
+      name="{{ name }}"
+      type="{{ type }}"
+      autocomplete="off">
+    <input matInput *ngIf="useValue" #trigger
+      [ngStyle]="style"
+      placeholder="{{ label | translate }} {{ labelDetails | translate }}"
+      [(ngModel)]="value"
+      (ngModelChange)="onValueChange()"
+      [matAutocomplete]="auto"
+      (input)="onInputChange($event.target.value)"
+      name="{{ name }}"
+      type="{{ type }}"
+      autocomplete="off">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="valueChange.emit($event.option.value)" (opened)="onOpenPane()">
+      <mat-option *ngFor="let model of filteredList | async" [value]="model">
+        {{ this.displayWith(model) }}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+
+</ng-container>

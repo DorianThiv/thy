@@ -1,0 +1,9 @@
+
+<app-thy-dialogs-layout [title]="'@file-import'" [validLabel]="'@global-import'" (validate)="validate()" (close)="close()">
+
+  <input type="file" class="ui-g-12" (change)="onFileChange($event.target.files)"/>
+  <div class="ui-g-12" style="height: 200px; margin: 10px">
+    <img *ngIf="fileSrc" [src]="fileSrc"/>
+  </div>
+
+</app-thy-dialogs-layout>

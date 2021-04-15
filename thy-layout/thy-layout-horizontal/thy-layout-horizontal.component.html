@@ -1,0 +1,15 @@
+
+<div #container class="thy-container thy-splitter">
+    <!-- <my-compoent toolbar></my-component> -->
+    <ng-content select="[toolbar]"></ng-content>
+    <as-split [direction]="'vertical'" [restrictMove]="true" [gutterSize]="1" unit="percent" (dragEnd)="onDragEnd($event)">
+        <as-split-area [size]="up">
+            <!-- <my-compoent up></my-component> -->
+            <ng-content select="[up]"></ng-content>
+        </as-split-area>
+        <as-split-area [size]="down">
+            <!-- <my-compoent down></my-component> -->
+            <ng-content select="[down]"></ng-content>
+        </as-split-area>
+    </as-split>
+</div>

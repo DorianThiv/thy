@@ -1,0 +1,143 @@
+<!-- Material Style -->
+
+<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" color="accent">
+    <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+    <input #input matInput *ngIf="type !== 'number'"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="placeholder | translate"
+        [disabled]="disabled"
+        [required]="required"
+        [readonly]="readonly"
+        [errorStateMatcher]="errorMatcher"
+        [name]="name"
+        [type]="type"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+    <input #input matInput *ngIf="type === 'number'"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="placeholder | translate"
+        [disabled]="disabled"
+        [readonly]="readonly"
+        [required]="required"
+        [errorStateMatcher]="errorMatcher"
+        [name]="name"
+        type="number"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+    <!-- With menu -->
+    <button *ngIf="suffix && suffixMenu && showSuffix" mat-button matSuffix mat-icon-button class="thy-suffix-button" [matMenuTriggerFor]="suffixMenu" [disabled]="disabled || suffixDisabled" (click)="onSuffix($event)">
+        <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>
+    </button>
+    <!-- No menu -->
+    <button *ngIf="suffix && !suffixMenu && showSuffix" mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="disabled || suffixDisabled" (click)="onSuffix($event)">
+        <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>
+    </button>
+    <!-- No menu -->
+    <button *ngIf="suffixSec && !suffixMenu && showSuffixSec" mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="disabled || suffixSecDisabled" (click)="onSuffixSec($event)">
+        <mat-icon class="thy-suffix-icon">{{ suffixSec }}</mat-icon>
+    </button>
+    <button *ngIf="showDeleteSuffix && value" mat-button matSuffix mat-icon-button class="thy-suffix-button" (click)="onDelete()">
+        <mat-icon class="thy-suffix-icon">close</mat-icon>
+    </button>
+</mat-form-field>
+
+<!-- Partial Style -->
+<ng-container *ngIf="!noFormField && formFieldType === formFieldTypes.Partial">
+
+    <input #input matInput *ngIf="type !== 'number'"
+        [ngClass]="getClasses()"
+        [ngStyle]="style"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="label | translate"
+        [disabled]="disabled"
+        [readonly]="readonly"
+        [name]="name"
+        [type]="type"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+
+    <input #input matInput *ngIf="type == 'number'"
+        [ngClass]="getClasses()"
+        [ngStyle]="style"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="label | translate"
+        [disabled]="disabled"
+        [readonly]="readonly"
+        [name]="name"
+        type="number"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+
+</ng-container>
+
+<!-- Unset Style -->
+<ng-container *ngIf="noFormField || formFieldType === formFieldTypes.Unset">
+
+    <input #input *ngIf="type !== 'number'"
+        [ngClass]="getClasses()"
+        [ngStyle]="style"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="label | translate"
+        [disabled]="disabled"
+        [readonly]="readonly"
+        [name]="name"
+        [type]="type"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+
+    <input #input *ngIf="type == 'number'"
+        [ngClass]="getClasses()"
+        [ngStyle]="style"
+        [(ngModel)]="value"
+        (ngModelChange)="onValueChange()"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [placeholder]="label | translate"
+        [disabled]="disabled"
+        [readonly]="readonly"
+        [name]="name"
+        type="number"
+        [title]="title"
+        [min]="min"
+        [max]="max"
+        autocomplete="off"
+        focusout="onFocusOut()"
+        (input)="onInputChange($event.target.value)"
+        (click)="clickSelect.emit($event)" />
+
+</ng-container>
+

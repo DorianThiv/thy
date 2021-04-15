@@ -1,0 +1,5 @@
+<mat-radio-group class="ui-g-12" [(ngModel)]="value" (change)="onModeChange()" name="period-mode">
+    <mat-radio-button class="ui-g-4" [value]="periodModes.Default" style="margin-top: 15px">{{ '@global-default' | translate }}</mat-radio-button>
+    <mat-radio-button class="ui-g-4" [value]="periodModes.Other" style="margin-top: 15px">{{ '@global-other' | translate }}</mat-radio-button>
+    <button mat-raised-button *ngIf="value === periodModes.Other" class="ui-g-4" style="margin-top: 8px" (click)="onBuildPeriod()"><mat-icon>more_horiz</mat-icon></button>
+</mat-radio-group>

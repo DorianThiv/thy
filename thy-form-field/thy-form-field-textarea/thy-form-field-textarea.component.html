@@ -1,0 +1,21 @@
+<!-- thy form field -->
+<mat-form-field [ngClass]="getClasses()" appearance="outline" color="accent">
+    <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+    <textarea matInput #input
+        [(ngModel)]="value"
+        (ngModelChange)="valueChange.emit(value ? value: null)"
+        [attr.cdkFocusInitial]="focused ? '' : null"
+        [disabled]="disabled"
+        [name]="name"
+        [title]="title"
+        [rows]="rows"
+        autocomplete="off">
+    </textarea>
+    <button *ngIf="suffix" mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="suffixDisabled" (click)="onSuffix($event)">
+        <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>
+    </button>
+    <button *ngIf="showDeleteSuffix && value" mat-button matSuffix mat-icon-button class="thy-suffix-button" (click)="onDelete()">
+        <mat-icon class="thy-suffix-icon">close</mat-icon>
+    </button>
+</mat-form-field>
+    

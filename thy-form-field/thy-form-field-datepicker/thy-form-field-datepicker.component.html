@@ -1,0 +1,14 @@
+<mat-form-field *ngIf="!noFormField" [ngClass]="getClasses()" appearance="outline" color="accent" matTooltip="{{ tooltipText | translate }}" matTooltipPosition="{{ tooltipPosition }}">
+    <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+    <input matInput *ngIf="!useValue" [matDatepicker]="pickerEnd" class="datepicker" [formControl]="formController">
+    <input matInput *ngIf="useValue" [matDatepicker]="pickerEnd" class="datepicker" [value]="value" [disabled]="disabled" (dateChange)="onDateChange($event)">
+    <mat-datepicker #pickerEnd color="accent" (closed)="closed.emit()"></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="pickerEnd">
+        <mat-icon matDatepickerToggleIcon class="thy-suffix-icon">date_range</mat-icon>
+    </mat-datepicker-toggle>
+</mat-form-field>
+
+<ng-container *ngIf="noFormField">
+    <input *ngIf="!useValue" id="formField" [placeholder]="label | translate" [ngClass]="getClasses()" [formControl]="formController" [disabled]="disabled" type="date">
+    <input *ngIf="useValue" id="value" [placeholder]="label | translate" [ngClass]="getClasses()" [value]="formatValue(value)" [disabled]="disabled" (change)="onHtmlDateChange($event.target.valueAsDate)" type="date">
+</ng-container>

@@ -1,0 +1,149 @@
+
+// .thy-form-field {
+//     width: auto !important;
+// }
+
+.thy-html-input {
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    height: 25px;
+}
+
+
+.thy-tab-margin {
+    display: block;
+    height: 20px;
+}
+
+.thy-button {
+    margin-top: 10px !important;
+}
+
+.thy-button-period {
+    margin-top: -5px !important;
+}
+
+.thy-inline-slide-toggle {
+    margin-bottom: 10px !important;
+}
+
+.thy-suffix-button {
+    display: inline-block !important;
+    // vertical-align: bottom !important;
+    height: 24px !important;
+    width: 24px !important;
+    line-height: 24px !important;
+    margin-left: 0.5em;
+}
+
+.thy-suffix-icon {
+    height: 24px !important;
+    width: 24px !important;
+    line-height: 24px !important;
+    font-size: 24px !important;
+    color: #444;
+    margin-right: 10px;
+    margin-left: 7px;
+    vertical-align: middle !important;
+}
+
+.thy-browse-button {
+    margin-top: 2px;
+    margin-bottom: 18px !important;
+}
+
+.thy-dialog-content {
+    padding-bottom: 5px;
+    max-height: inherit !important;
+    height: calc(100% - 52px) !important;
+}
+
+.thy-toggle-button {
+    height: 65.5px !important;
+    text-align: center;
+}
+
+.thy-check-button {
+    margin: 2px;
+}
+
+.thy-dialog-btn-close {
+    position: absolute;
+    align-self: flex-end;
+    margin-top: -7px;
+}
+
+.thy-panel-sub-group {
+    padding-left: 30px;
+}
+
+.thy-inline-button {
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.thy-radio-group {
+    margin-top: 14px;
+    margin-bottom: 16px;
+    padding: 0 !important;
+}
+
+.thy-action-row {
+    padding: 8px 4px 8px 12px !important;
+    // justify-content: initial !important;
+}
+
+.thy-action-row-button {
+    width: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 10px !important;
+}
+
+.thy-grid-toolbar {
+    padding: 2px !important;
+    text-align: center !important;
+}
+
+// Select option accent color.
+::ng-deep .mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #333 !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0.2em 0 !important;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+    padding: 0.4em 0px !important;
+}
+
+::ng-deep.mat-form-field-label-wrapper {
+    top: -1em !important;
+}
+
+::ng-deep.mat-input-element {
+    vertical-align: top !important;
+    margin-top: -2px !important;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-label {
+    top: 1.14375em !important; 
+}
+
+::ng-deep.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.0em) scale(.75) !important;
+    width: 133.33333% !important;
+}
+
+::ng-deep.mat-select-arrow-wrapper {
+    // display: inline-block;
+}
+

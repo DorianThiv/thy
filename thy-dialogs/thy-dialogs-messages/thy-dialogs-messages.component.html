@@ -1,0 +1,10 @@
+
+
+<app-thy-dialogs-layout [title]="data?.title" [validation]="false" [showCloseButton]="false" (close)="close()">
+
+  <p *ngIf="data?.message" id="dialog-message">{{ data?.message | translate }}</p>
+  <ul *ngIf="data.details">
+    <li *ngFor="let item of data.details" class="dialog-detail" style="display: list-item">{{ item }}</li>
+  </ul>
+
+</app-thy-dialogs-layout>

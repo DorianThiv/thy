@@ -1,0 +1,65 @@
+
+<!-- With Form Field -->
+<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" appearance="outline" color="accent">
+    <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+    <input matInput
+        [matMenuTriggerFor]="colorMenu"
+        [(ngModel)]="value"
+        (ngModelChange)="value ? valueChange.emit(value) : valueChange.emit(null)"
+        [style.backgroundColor]="value"
+        (click)="$event.preventDefault()"
+        name="{{ name }}"
+        title="{{ title }}"
+        autocomplete="off" />
+    <button matSuffix mat-icon-button class="thy-suffix-button thy-picker-suffix-button" [matMenuTriggerFor]="colorMenu">
+        <mat-icon class="thy-suffix-icon">colorize</mat-icon>
+    </button>
+    <button *ngIf="showDeleteSuffix && value" matSuffix mat-icon-button class="thy-suffix-button" (click)="onDelete()">
+        <mat-icon class="thy-suffix-icon">close</mat-icon>
+    </button>
+</mat-form-field>
+
+<!-- No Form Field -->
+<div>
+    <input matInput *ngIf="noFormField || formFieldType === formFieldTypes.Unset"
+        class="thy-picker-no-form-field"
+        [value]="alphaAsNull && !value ? 'Auto' : null"
+        [matMenuTriggerFor]="colorMenu"
+        [style.backgroundColor]="value ? value : '#000'"
+        (click)="$event.preventDefault()"
+        name="{{ name }}"
+        title="{{ title }}"
+        readonly="readonly"
+        autocomplete="off"/>
+</div>
+
+<ng-container *ngIf="!noFormField && formFieldType === formFieldTypes.Partial">
+
+    <mat-icon class="thy-picker-list-item-icon"
+        matTooltip="{{ '@global-color' | translate }} {{ alphaAsNull && !value ? ' : Auto' : '' }}"
+        [matMenuTriggerFor]="colorMenu"
+        [style.color]="value ? value : '#000'">
+            fiber_manual_record
+    </mat-icon>
+
+</ng-container>
+
+
+<!-- Menu color -->
+<mat-menu #colorMenu="matMenu">
+    <button *ngIf="alphaAsNull" mat-menu-item (click)="onChange('rgba(0,0,0,0)')">
+        <mat-icon>brightness_auto</mat-icon>
+        {{ '@global-automatic' | translate }}
+    </button>
+    <button *ngIf="defaultColor" mat-menu-item (click)="onChange(defaultColor)">
+        <mat-icon [style.color]="defaultColor">invert_colors</mat-icon>
+        {{ '@global-default' | translate }}
+    </button>
+    <span [style.background]="value"
+        [cpToggle]="true"
+        [cpDialogDisplay]="'inline'"
+        [colorPicker]="value"
+        [cpPresetColors]="presets"
+        (colorPickerChange)="onChange($event)">
+    </span>
+</mat-menu>

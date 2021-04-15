@@ -1,0 +1,30 @@
+
+<div #container class="thy-container thy-splitter">
+
+    <!-- <my-compoent toolbar></my-component> -->
+    <ng-content *ngIf="!isFullscreen" select="[toolbar]"></ng-content>
+
+    <div [ngClass]="useToolbarHeight ? 'body-container' : 'body-container-full'">
+
+        <div style="height: 100%">
+
+            <as-split [direction]="'horizontal'" [restrictMove]="true" [gutterSize]="1" (dragEnd)="onDragEnd($event)">
+
+                <!-- <my-compoent left></my-component> -->
+                <as-split-area [size]="left">
+                    <ng-content select="[left]"></ng-content>
+                </as-split-area>
+
+                <!-- <my-compoent right></my-component> -->
+                <as-split-area [size]="right" *ngIf="showRight">
+                    <ng-content select="[right]"></ng-content>
+                </as-split-area>
+
+            </as-split>
+
+        </div>
+
+    </div>
+
+</div>
+

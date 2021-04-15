@@ -1,0 +1,25 @@
+<mat-form-field [ngStyle]="style" [ngClass]="getClasses()" appearance="outline" color="accent" >
+    <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
+    <mat-select [(ngModel)]="value" (ngModelChange)="valueChange.emit(value)" [disabled]="disabled" [name]="name">
+        <mat-select-trigger>
+            <ng-container *ngFor="let option of options">
+                <ng-container *ngIf="value === option.Value">
+                    <ng-container *ngIf="option.Icon">
+                        <mat-icon *ngIf="!option.IsSvgIcon" class="thy-select-trigger-icon">{{ option.Icon }}</mat-icon>
+                        <mat-icon *ngIf="option.IsSvgIcon" class="thy-select-trigger-icon" [svgIcon]="option.Icon"></mat-icon>
+                    </ng-container>
+                    <span class="thy-select-trigger-text">{{ option.Name | translate }}</span>
+                </ng-container>
+            </ng-container>
+        </mat-select-trigger>
+        <ng-container *ngFor="let option of options">
+            <mat-option *ngIf="option.Visible" [value]="option.Value" [disabled]="option.Disabled">
+                <ng-container *ngIf="option.Icon">
+                    <mat-icon *ngIf="!option.IsSvgIcon" class="thy-select-option-icon" >{{ option.Icon }}</mat-icon>
+                    <mat-icon *ngIf="option.IsSvgIcon" class="thy-select-option-icon" [svgIcon]="option.Icon"></mat-icon>
+                </ng-container>
+                <span>{{ option.Name | translate }}</span>
+            </mat-option>
+        </ng-container>
+    </mat-select>
+</mat-form-field>

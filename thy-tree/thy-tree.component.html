@@ -1,0 +1,65 @@
+
+<!-- Tree -->
+<mat-tree  [dataSource]="dataSource" [treeControl]="treeControl" (contextmenu)="onContextMenu($event)" class="thy-tree">
+
+  <!-- Nodes -->
+  <mat-tree-node
+    *matTreeNodeDef="let node; when: hasChild"
+    matTreeNodePadding
+    matTreeNodePaddingIndent="10"
+    [ngClass]="node.selected ? 'thy-tree-node-selected' : 'thy-tree-node'"
+    (click)="onSelection($event, node)"
+    (contextmenu)="onContextMenu($event, node)">
+    <button mat-icon-button
+      class="thy-tree-button"
+      [ngStyle]="{ 'visibility': arrowVisibility(node) }"
+      (click)="onExpand($event, node)">
+      <mat-icon class="thy-tree-arrow"> {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }} </mat-icon>
+    </button>
+    <div class="thy-tree-zone"
+      [draggable]="node.isDraggable"
+      (dragstart)="onDragStart($event, node)"
+      (dragover)="onDragOver($event, node)"
+      (drop)="onDrop($event, node)">
+      <mat-icon *ngIf="!node.isLoading" class="thy-tree-icon" [style.color]="node.iconColor">{{ node.icon }}</mat-icon>
+      <mat-icon *ngIf="node.isLoading" class="thy-tree-icon thy-data-loader">data_usage</mat-icon>
+      <span class="thy-tree-text">{{ node.name | translate }}</span>
+      <span class="thy-tree-text thy-tree-details" *ngIf="!node.details && node.showDetails">
+        ({{ getChildrenOf(node) }}<span *ngIf="node.detailsSuffix"> {{ node.detailsSuffix | translate }}</span>)
+      </span>
+      <span class="thy-tree-text thy-tree-details" *ngIf="node.details && node.showDetails">
+        ({{ node.details }}<span *ngIf="node.detailsSuffix"> {{ node.detailsSuffix | translate }}</span>)
+      </span>
+    </div>
+  </mat-tree-node>
+
+  <!-- Leafs -->
+  <mat-tree-node *matTreeNodeDef="let node; when: isDisplayable;"
+    matTreeNodePadding
+    matTreeNodePaddingIndent="10" 
+    [ngClass]="node.selected ? 'thy-tree-node-selected' : 'thy-tree-node'"
+    (click)="onSelection($event, node)"
+    (contextmenu)="onContextMenu($event, node)">
+    <button mat-icon-button class="thy-tree-button thy-tree-button-disabled" disabled></button>
+    <div class="thy-tree-zone"
+      [draggable]="node.isDraggable"
+      (dragstart)="onDragStart($event, node)"
+      (dragover)="onDragOver($event, node)"
+      (drop)="onDrop($event, node)">
+      <mat-icon class="thy-tree-icon" [style.color]="node.iconColor">{{ node.icon }}</mat-icon>
+      <span class="thy-tree-text">{{ node.name | translate }}</span>
+      <span class="thy-tree-text thy-tree-details" *ngIf="node.details">
+        ({{ node.details }}<span *ngIf="node.detailsSuffix"> {{ node.detailsSuffix | translate }}</span>)
+      </span>
+    </div>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="10" class="thy-tree-node-hidden"></mat-tree-node>
+
+</mat-tree>
+
+<div *ngIf="menu" style="position: fixed"
+  [style.left.px]="contextMenuPosition.x"
+  [style.top.px]="contextMenuPosition.y"
+  [matMenuTriggerFor]="menu">
+</div>

@@ -1,0 +1,6 @@
+<div [ngClass]="classes">
+    <button mat-button *ngIf="type === 'flat'"><mat-icon *ngIf="icon">{{ icon }}</mat-icon>{{ value | translate }}<ng-content></ng-content></button>
+    <button mat-raised-button *ngIf="type === 'raised'"><mat-icon *ngIf="icon">{{ icon }}</mat-icon>{{ value | translate }}<ng-content></ng-content></button>
+    <button mat-stroked-button *ngIf="type === 'stroked'"><mat-icon *ngIf="icon">{{ icon }}</mat-icon>{{ value | translate }}<ng-content></ng-content></button>
+    <button mat-icon-button *ngIf="type === 'icon'"><mat-icon *ngIf="icon">{{ icon }}</mat-icon></button>
+</div>

@@ -1,0 +1,7 @@
+<fieldset [ngClass]="classes" [ngStyle]="style">
+    <legend class="thy-legend">
+        <span>{{ label | translate }}</span>
+        <button mat-icon-button *ngIf="action" [matMenuTriggerFor]="actionMenu" (click)="onClickAction()"><mat-icon>{{ action }}</mat-icon></button>
+    </legend>
+    <ng-content></ng-content>
+</fieldset>

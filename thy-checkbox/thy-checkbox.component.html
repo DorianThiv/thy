@@ -1,0 +1,6 @@
+
+<div [ngClass]="classes">
+    <mat-checkbox [checked]="value" (change)="onValueChange($event)" [name]="name">
+        <span>{{ label | translate }}</span>
+    </mat-checkbox>
+</div>

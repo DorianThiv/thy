@@ -1,0 +1,7 @@
+
+<mat-form-field [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" [color]="color" appearance="outline" [floatLabel]="'never'">
+    <input matInput placeholder="{{ label | translate }}" autocomplete="off" (input)="onValueChange2($event)" />
+    <button mat-button matSuffix mat-icon-button class="thy-suffix-button">
+        <mat-icon class="thy-suffix-icon">search</mat-icon>
+    </button>
+</mat-form-field>

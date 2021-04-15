@@ -1,0 +1,39 @@
+
+<div #container class="thy-container thy-splitter">
+
+    <!-- Toolbar -->
+    <ng-content select="[toolbar]"></ng-content>
+
+    <div class="body-container">
+
+        <div style="height: 100%">
+
+            <as-split [direction]="'horizontal'" [restrictMove]="true" [gutterSize]="1" unit="percent" (dragEnd)="onDragEnd($event)">
+
+                <!-- Left -->
+                <as-split-area [size]="left">
+                    <ng-content select="[left]"></ng-content>
+                </as-split-area>
+    
+                <as-split-area [size]="right">
+                    <as-split [direction]="'vertical'" [restrictMove]="true" [gutterSize]="1" unit="percent" (dragEnd)="onDragEnd($event)">
+    
+                        <!-- Up -->
+                        <as-split-area [size]="up">
+                            <ng-content select="[up]"></ng-content>
+                        </as-split-area>
+    
+                        <!-- Down -->
+                        <as-split-area [size]="down">
+                            <ng-content select="[down]"></ng-content>
+                        </as-split-area>
+    
+                    </as-split>
+                </as-split-area>
+            </as-split>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+<mat-toolbar #toolbar [ngClass]="classes" [ngStyle]="style">
+
+    <!-- Toogler -->
+    <button *ngIf="showToggler" mat-icon-button class="thy-toggler" (click)="clickToggle.emit()"><mat-icon>menu</mat-icon></button>
+
+    <h1 class="thy-toolbar-mini-title" [title]="title | translate">{{ title | translate }}</h1>
+
+    <ng-content class="thy-toolbar-item"></ng-content>
+
+</mat-toolbar>

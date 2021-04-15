@@ -1,0 +1,102 @@
+
+
+.thy-tab-margin {
+    display: block;
+    height: 10px;
+}
+
+.thy-title-inline {
+    margin-top: 15px;
+    text-align: left !important;
+}
+
+.thy-button {
+    margin-top: 10px !important;
+}
+
+.thy-button-period {
+    margin-top: -5px !important;
+}
+
+.thy-suffix-button {
+    display: inline-block !important;
+    vertical-align: bottom !important;
+    height: 24px !important;
+    width: 24px !important;
+    line-height: 24px !important;
+}
+
+.thy-suffix-icon {
+    height: 24px !important;
+    width: 24px !important;
+    line-height: 19px !important;
+    font-size: 24px !important;
+    color: #444;
+    margin-right: 10px;
+    margin-left: 7px;
+    vertical-align: middle !important;
+}
+
+.thy-divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.thy-checkbox-inline {
+    margin-top: 23px !important;
+}
+
+.thy-browse-button {
+    margin-top: 2px;
+    margin-bottom: 18px !important;
+}
+
+.thy-toggle-button {
+    height: 65.5px !important;
+    text-align: center;
+}
+
+.thy-check-button {
+    margin: 2px;
+}
+
+.thy-dialog-tab-margin {
+    display: block;
+    height: 10px;
+    width: 100%;
+}
+
+.thy-grid-header {
+    line-height: 44px !important;
+}
+
+.thy-grid-title {
+    display: inline-block !important;
+    margin-bottom: 0px !important;
+    vertical-align: middle !important;
+}
+
+.thy-grid-toolbar {
+    float: right;
+    padding: 2px !important;
+}
+
+@keyframes thy-spinner {
+    to {transform: rotate(360deg);}
+}
+   
+.thy-spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #000000;
+    animation: spinner .8s linear infinite;
+}

@@ -1,0 +1,63 @@
+
+<app-thy-dialogs-layout [title]="'@global-period'" (validate)="validate()" (close)="close()">
+
+  <!-- Period -->
+  <app-thy-form-field-select label="@global-beginning" [(value)]="period.Start" [options]="startOptions" (valueChange)="update()" name="period-start"></app-thy-form-field-select>
+
+  <!-- Offset 1 -->
+  <app-thy-form-field-input label="@global-offset" [class]="'ui-g-4'" [(value)]="period.Offset.Value" (valueChange)="update()" name="period-offset" [type]="'number'"></app-thy-form-field-input>
+
+
+  <app-thy-form-field-select label="@global-offset" [class]="'ui-g-8'" [(value)]="period.Offset.Unit" [options]="offsetOptions" (valueChange)="update()" name="period-offsetUnit"></app-thy-form-field-select>
+
+  <!-- Offset 2 -->
+  <app-thy-form-field-input label="@global-secondOffset" [class]="'ui-g-4'" [(value)]="period.Offset2.Value" (valueChange)="update()" name="period-offset2" [type]="'number'"></app-thy-form-field-input>
+  <!-- <mat-form-field class="ui-g-4">
+    <input matInput type="number" placeholder="{{'@global-secondOffset' | translate}}" [(ngModel)]="period.Offset2.Value" (ngModelChange)="update()" name="period-offset2">
+  </mat-form-field> -->
+  <app-thy-form-field-select label="@global-secondOffset" [class]="'ui-g-8'" [(value)]="period.Offset2.Unit" [options]="offsetOptions" (valueChange)="update()" name="period-offsetUnit2"></app-thy-form-field-select>
+  <!-- <mat-form-field class="ui-g-8">
+    <mat-select placeholder="{{ '@global-secondOffset' | translate }}" [(ngModel)]="period.Offset2.Unit" (ngModelChange)="update()" name="period-offsetUnit2">
+      <mat-option [value]="0">{{ '@offset-none' | translate }}</mat-option>
+      <mat-option [value]="3">{{ '@global-hours' | translate }}</mat-option>
+      <mat-option [value]="4">{{ '@global-days' | translate }}</mat-option>
+      <mat-option [value]="5">{{ '@global-weeks' | translate }}</mat-option>
+      <mat-option [value]="6">{{ '@global-months' | translate }}</mat-option>
+      <mat-option [value]="7">{{ '@global-years' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <!-- Duration -->
+  <app-thy-form-field-input label="@global-duration" [class]="'ui-g-4'" [(value)]="period.Duration.Value" (valueChange)="update()" name="period-duration" [type]="'number'"></app-thy-form-field-input>
+  <!-- <mat-form-field class="ui-g-4">
+    <input matInput type="number" placeholder="{{ '@global-duration' | translate }}" [(ngModel)]="period.Duration.Value" (ngModelChange)="update()" name="period-duration">
+  </mat-form-field> -->
+  <app-thy-form-field-select label="@global-duration" [class]="'ui-g-8'" [(value)]="period.Duration.Unit" [options]="durationOptions" (valueChange)="update()" name="period-durationUnit"></app-thy-form-field-select>
+  <!-- <mat-form-field class="ui-g-8">
+    <mat-select placeholder="{{ '@global-duration' | translate }}" [(ngModel)]="period.Duration.Unit" (ngModelChange)="update()" name="period-durationUnit">
+      <mat-option [value]="0">{{ '@global-none' | translate }}</mat-option>
+      <mat-option [value]="3">{{ '@global-hours' | translate }}</mat-option>
+      <mat-option [value]="4">{{ '@global-days' | translate }}</mat-option>
+      <mat-option [value]="5">{{ '@global-weeks' | translate }}</mat-option>
+      <mat-option [value]="6">{{ '@global-months' | translate }}</mat-option>
+      <mat-option [value]="7">{{ '@global-years' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <!-- Sample -->
+  <app-thy-form-field-select label="@global-sampling" [(value)]="period.SampleDuration.Unit" [options]="durationOptions" (valueChange)="update()" name="period-sampleUnit"></app-thy-form-field-select>
+  <!-- <mat-form-field class="ui-g-12">
+    <mat-select placeholder="{{ '@global-sampling' | translate }}" [(ngModel)]="period.SampleDuration.Unit" (ngModelChange)="update()" name="period-sampleUnit">
+      <mat-option [value]="0">{{ '@sampling-none' | translate }}</mat-option>
+      <mat-option [value]="3">{{ '@global-hours' | translate }}</mat-option>
+      <mat-option [value]="4">{{ '@global-days' | translate }}</mat-option>
+      <mat-option [value]="5">{{ '@global-weeks' | translate }}</mat-option>
+      <mat-option [value]="6">{{ '@global-months' | translate }}</mat-option>
+      <mat-option [value]="7">{{ '@global-years' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <!-- Period Equivalent -->
+  <mat-checkbox class="ui-g-12" [(ngModel)]="period.IsEquivalentPeriod" (ngModelChange)="update()" name="equivalent-period"> {{ '@period-equivalentToCurrent' | translate }} </mat-checkbox>
+  <!-- Exemple -->
+  <span class="ui-g-6 group-title">{{ '@global-startDate' | translate }} : {{ period.StartDateStr }}</span>
+  <span class="ui-g-6 group-title">{{ '@global-endDate' | translate }} : {{ period.EndDateStr }}</span>
+
+</app-thy-dialogs-layout>

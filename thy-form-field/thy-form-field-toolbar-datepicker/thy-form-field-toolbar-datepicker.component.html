@@ -1,0 +1,6 @@
+
+<mat-form-field appearance="outline" [floatLabel]="'never'" class="thy-form-field-45 datepicker thy-toolbar-item" style="width: 120px; text-align: center;" matTooltip="{{ label | translate }}" matTooltipPosition="right">
+    <input matInput [matDatepicker]="pickerEnd" class="datepicker" [formControl]="formController" autocomplete="off" (dateChange)="onValueChange()">
+    <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+    <mat-datepicker #pickerEnd color="accent"></mat-datepicker>
+</mat-form-field>

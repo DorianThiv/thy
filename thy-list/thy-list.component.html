@@ -1,0 +1,17 @@
+<!-- List -->
+<app-thy-fieldset [ngStyle]="fieldsetStyle" [class]="fieldsetClass" [label]="title" [action]="action" (clickAction)="onAdd()">
+  <mat-list class="thy-list" [ngStyle]="style">
+      <mat-list-item *ngFor="let item of list"  class="thy-list-item">
+        <mat-icon mat-list-icon class="thy-list-icon">{{ item.icon }}</mat-icon>
+          <h4 mat-line *ngIf="!item.editing" class="thy-list-h4"> {{ item.name }} </h4>
+          <app-thy-form-field-autocomplete mat-line *ngIf="editable && item.editing" [label]="autocompleteLabel" [noFormField]="true" [list]="autocompleteList" [property]="autocompleteProperty" [style]="autocompleteStyle" (valueChange)="onChange(item, $event)">
+          </app-thy-form-field-autocomplete>
+          <ng-container *ngIf="editable">
+            <!-- <button mat-icon-button *ngIf="item.editing" class="thy-list-button-suffix" (click)="onValid(item)"><mat-icon class="thy-list-icon-suffix">check</mat-icon></button> -->
+            <button mat-icon-button *ngIf="item.editing" class="thy-list-button-suffix" (click)="onCancel(item)"><mat-icon class="thy-list-icon-suffix">cancel</mat-icon></button>
+            <button mat-icon-button *ngIf="!item.editing" class="thy-list-button-suffix" (click)="onEdit(item)"><mat-icon class="thy-list-icon-suffix">edit</mat-icon></button>
+            <button mat-icon-button *ngIf="!item.editing" class="thy-list-button-suffix" (click)="onDelete(item)"><mat-icon class="thy-list-icon-suffix">delete</mat-icon></button>
+          </ng-container>
+      </mat-list-item>
+  </mat-list>
+</app-thy-fieldset>

@@ -1,0 +1,19 @@
+@import '../../../../thy-styles/thy-theme-blue.scss';
+@import '../../models/thy-form-elements.scss';
+
+.thy-autocomplete-option-tree {
+    padding-left: 0px;
+    padding-right: 16px;
+}
+
+.thy-autocomplete-option-icon {
+    margin-right: 3px !important;
+}
+
+.thy-no-form-field {
+    border: solid 1px #777 !important;
+    padding: 3.5px !important;
+    border-radius: 2.1px !important;
+    display: inline-block !important;
+    margin-top: 0px !important;
+}

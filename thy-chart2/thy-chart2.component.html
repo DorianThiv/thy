@@ -1,0 +1,40 @@
+
+<div #container id="container" [style.height]="height" [style.paddingTop.px]="paddingTop" [ngClass]="classesList" (contextmenu)="onContextMenu($event)">
+  <mat-spinner [hidden]="!loading" id="progress-spinner" color="accent"></mat-spinner>
+  <highcharts-chart #chart *ngIf="chartOptions"
+
+    [Highcharts]="Highcharts"
+  
+    [constructorType]="chartConstructor"
+    [options]="chartOptions"
+  
+    [(update)]="updateFlag"
+    [oneToOne]="oneToOneFlag"
+    [runOutsideAngular]="runOutsideAngularFlag"
+
+    (chartInstance)="onChartInstance($event)"
+  
+    style="width: 100%; height: 100%; display: block;"
+
+  ></highcharts-chart>
+</div>
+
+<div style="position: fixed" *ngIf="showContextMenu"
+    [style.left.px]="contextMenuPosition.x"
+    [style.top.px]="contextMenuPosition.y"
+    [matMenuTriggerFor]="menu">
+</div>
+
+
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+  <ng-template matMenuContent>
+    <button mat-menu-item (click)="onShowMarkers()">
+      <mat-icon [ngStyle]="{ 'color': this.markers ? '#ffd740' : '' }">timeline</mat-icon>
+      <span>{{ '@points-show' | translate }}</span>
+    </button>
+    <button mat-menu-item (click)="onShowCrosshair()">
+      <mat-icon [ngStyle]="{ 'color': this.crosshair ? '#ffd740' : '' }">all_out</mat-icon>
+      <span>{{ '@global-showCrosshair' | translate }}</span>
+    </button>
+  </ng-template>
+</mat-menu>
