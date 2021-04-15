@@ -3,7 +3,7 @@ import { Injectable, isDevMode } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NetworkService {
+export class ThyNetworkService {
 
   private proto: string = isDevMode() ? 'http:' : window.location.protocol;
   private host: string = window.location.hostname;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptorService } from './thy-token-interceptor.service';
+import { ThyTokenInterceptorService } from './thy-token-interceptor.service';
 
 
 
@@ -14,9 +14,9 @@ import { TokenInterceptorService } from './thy-token-interceptor.service';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
+      useClass: ThyTokenInterceptorService,
       multi: true
     }
   ]
 })
-export class NetworkModule { }
+export class ThyNetworkModule { }

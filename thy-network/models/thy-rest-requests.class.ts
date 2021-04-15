@@ -1,8 +1,8 @@
-export enum RestRequests {
+export enum ThyRestRequests {
 
 }
 
-export class RestGetRequest {
+export class ThyRestGetRequest {
 
     public request: string;
 
@@ -12,7 +12,7 @@ export class RestGetRequest {
 
 }
 
-export class RestPostRequest<T> {
+export class ThyRestPostRequest<T> {
 
     public request: string;
     public body: T;
@@ -24,7 +24,7 @@ export class RestPostRequest<T> {
 
 }
 
-export class RestPutRequest<T> {
+export class ThyRestPutRequest<T> {
 
     public request: string;
     public body: any | T;
@@ -41,7 +41,7 @@ export class RestPutRequest<T> {
 
 }
 
-export class RestDeleteRequest {
+export class ThyRestDeleteRequest {
 
     public request: string;
 
