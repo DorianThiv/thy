@@ -14,7 +14,7 @@ export interface IThyPeriodDialogOptions {
 }
 
 @Component({
-  selector: 'app-thy-period',
+  selector: 'thy-period',
   templateUrl: './thy-period.component.html',
   styleUrls: ['./thy-period.component.scss']
 })

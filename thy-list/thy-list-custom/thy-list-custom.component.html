@@ -1,5 +1,5 @@
 <!-- List -->
-<app-thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" [actionMenu]="actionMenu" (clickAction)="onAdd()">
+<thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" [actionMenu]="actionMenu" (clickAction)="onAdd()">
 
     <ng-container *ngIf="showHeader">
 
@@ -31,11 +31,11 @@
             </div>
         </mat-list-item>
     </mat-list>
-</app-thy-fieldset>
+</thy-fieldset>
 
 <!-- Exemple [editAsDialog]="true"
 =================================================
-<app-thy-list-custom [title]="'@global-trends'" [(list)]="vm.TrendsView" [viewModel]="vm.TrendClass" [editAsDialog]="true" (add)="onEditTrend($event)" (edit)="onEditTrend($event)" name="trends">
+<thy-list-custom [title]="'@global-trends'" [(list)]="vm.TrendsView" [viewModel]="vm.TrendClass" [editAsDialog]="true" (add)="onEditTrend($event)" (edit)="onEditTrend($event)" name="trends">
 
     <ng-template let-item>
 
@@ -47,12 +47,12 @@
 
     </ng-template>
 
-</app-thy-list-custom>
+</thy-list-custom>
 -->
 
 <!-- Exemple [editAsDialog]="false"
 =================================================
-<app-thy-list-custom #list [title]="'@tariff-adjustment'" [(list)]="vm.Tariffs" [viewModel]="vm.TariffClass" [showHeader]="true" name="tarrifs">
+<thy-list-custom #list [title]="'@tariff-adjustment'" [(list)]="vm.Tariffs" [viewModel]="vm.TariffClass" [showHeader]="true" name="tarrifs">
 
     <ng-container header>
 
@@ -72,13 +72,13 @@
 
         <ng-container *ngIf="item.editing">
             
-            <app-thy-form-field-autocomplete-tree [class]="'ui-g-6'" [label]="'@global-nature'" [formController]="item.natureForm" [list]="natures" [noFormField]="true"></app-thy-form-field-autocomplete-tree>
+            <thy-form-field-autocomplete-tree [class]="'ui-g-6'" [label]="'@global-nature'" [formController]="item.natureForm" [list]="natures" [noFormField]="true"></thy-form-field-autocomplete-tree>
 
-            <app-thy-form-field-input [class]="'ui-g-6'" [label]="'@global-coefficient'" [(value)]="item.coeff" [type]="'number'" [noFormField]="true"></app-thy-form-field-input>
+            <thy-form-field-input [class]="'ui-g-6'" [label]="'@global-coefficient'" [(value)]="item.coeff" [type]="'number'" [noFormField]="true"></thy-form-field-input>
 
         </ng-container>
 
     </ng-template>
 
-</app-thy-list-custom>
+</thy-list-custom>
 -->

@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { ThyTranslateService } from '../../thy-translate';
 
 @Component({
-  selector: 'app-thy-form-field-control',
+  selector: 'thy-form-field-control',
   templateUrl: './thy-form-field-control.component.html',
   styleUrls: [
     '../models/thy-form-elements.scss',

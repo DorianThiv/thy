@@ -11,7 +11,7 @@ const Boost = require('highcharts/modules/boost');
 Boost(Highcharts);
 
 @Component({
-  selector: 'app-thy-graph',
+  selector: 'thy-graph',
   templateUrl: '../thy-chart2.component.html',
   styleUrls: ['./thy-graph.component.scss']
 })

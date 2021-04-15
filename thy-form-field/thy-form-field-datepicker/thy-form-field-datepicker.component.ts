@@ -6,7 +6,7 @@ import { ThyTranslateService } from '../../thy-translate';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker/datepicker-input-base';
 
 @Component({
-  selector: 'app-thy-form-field-datepicker',
+  selector: 'thy-form-field-datepicker',
   templateUrl: './thy-form-field-datepicker.component.html',
   styleUrls: [
     '../models/thy-form-elements.scss',

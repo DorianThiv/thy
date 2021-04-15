@@ -3,7 +3,7 @@ import { MatMenuTrigger, MatMenu } from '@angular/material/menu';
 import { ThyListViewModel } from '../models/thy-list-view.class';
 
 @Component({
-  selector: 'app-thy-list-custom',
+  selector: 'thy-list-custom',
   templateUrl: './thy-list-custom.component.html',
   styleUrls: ['./thy-list-custom.component.scss']
 })

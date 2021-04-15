@@ -1,5 +1,5 @@
 <!-- List -->
-<app-thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" (clickAction)="onAdd()">
+<thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" (clickAction)="onAdd()">
 
     <mat-list class="list ui-g-12" [ngStyle]="style" (contextmenu)="onContextMenu($event)">
 
@@ -27,7 +27,7 @@
 
     </mat-list>
 
-</app-thy-fieldset>
+</thy-fieldset>
 
 <div style="position: fixed"
   [style.left.px]="contextMenuPosition.x"

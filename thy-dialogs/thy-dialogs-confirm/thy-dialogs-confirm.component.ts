@@ -13,7 +13,7 @@ export interface ThyDialogConfirmResponse {
 }
 
 @Component({
-  selector: 'app-thy-dialogs-confirm',
+  selector: 'thy-dialogs-confirm',
   templateUrl: './thy-dialogs-confirm.component.html',
   styleUrls: ['./thy-dialogs-confirm.component.scss']
 })

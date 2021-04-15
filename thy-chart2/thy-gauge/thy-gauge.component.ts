@@ -13,7 +13,7 @@ HighchartsMore(Highcharts);
 HighchartsSolidGauge(Highcharts);
 
 @Component({
-selector: 'app-thy-gauge',
+selector: 'thy-gauge',
 templateUrl: '../thy-chart2.component.html',
 styleUrls: ['./thy-gauge.component.scss']
 })

@@ -5,7 +5,7 @@ import { ThyTreeSimpleViewModel } from '../models/thy-tree-simple-view.class';
 import { ThyTreeViewModel } from '../models/thy-tree-view.class';
 
 @Component({
-  selector: 'app-thy-tree-simple',
+  selector: 'thy-tree-simple',
   templateUrl: '../thy-tree.component.html',
   styleUrls: ['../thy-tree.component.scss']
 })

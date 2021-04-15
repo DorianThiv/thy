@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 
 @Component({
-  selector: 'app-thy-form-field-textarea',
+  selector: 'thy-form-field-textarea',
   templateUrl: './thy-form-field-textarea.component.html',
   styleUrls: [
     '../models/thy-form-elements.scss',

@@ -1,7 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-thy-fieldset',
+  selector: 'thy-fieldset',
   templateUrl: './thy-fieldset.component.html',
   styleUrls: ['./thy-fieldset.component.scss']
 })

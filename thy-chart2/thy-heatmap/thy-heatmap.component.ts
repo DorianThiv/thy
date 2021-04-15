@@ -15,7 +15,7 @@ export enum ThyHeatmapPeriod {
 }
 
 @Component({
-  selector: 'app-thy-heatmap',
+  selector: 'thy-heatmap',
   templateUrl: '../thy-chart2.component.html',
   styleUrls: ['./thy-heatmap.component.scss']
 })

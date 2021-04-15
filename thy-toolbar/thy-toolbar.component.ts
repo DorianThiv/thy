@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, Output, EventEmitter } from '@angular/core
 import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-thy-toolbar',
+  selector: 'thy-toolbar',
   templateUrl: './thy-toolbar.component.html',
   styleUrls: ['./thy-toolbar.component.scss']
 })

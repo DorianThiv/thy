@@ -3,7 +3,7 @@ import { ThyFormFieldBase } from '../models/thy-form-field.class';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-thy-form-field-toolbar-datepicker',
+  selector: 'thy-form-field-toolbar-datepicker',
   templateUrl: './thy-form-field-toolbar-datepicker.component.html',
   styleUrls: ['./thy-form-field-toolbar-datepicker.component.scss']
 })

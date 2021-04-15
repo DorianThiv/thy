@@ -3,7 +3,7 @@ import { ThyTranslateService } from '../../thy-translate';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 
 @Component({
-  selector: 'app-thy-form-field-input',
+  selector: 'thy-form-field-input',
   templateUrl: './thy-form-field-input.component.html',
   styleUrls: ['./thy-form-field-input.component.scss']
 })

@@ -5,7 +5,7 @@ import { of, Observable } from 'rxjs';
 import { MatAutocompleteTrigger, MatAutocomplete } from '@angular/material/autocomplete';
 
 @Component({
-  selector: 'app-thy-form-field-autocomplete',
+  selector: 'thy-form-field-autocomplete',
   templateUrl: './thy-form-field-autocomplete.component.html',
   styleUrls: ['./thy-form-field-autocomplete.component.scss']
 })

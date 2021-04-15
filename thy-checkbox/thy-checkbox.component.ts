@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'app-thy-checkbox',
+  selector: 'thy-checkbox',
   templateUrl: './thy-checkbox.component.html',
   styleUrls: ['./thy-checkbox.component.scss']
 })

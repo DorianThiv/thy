@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-thy-dialogs-layout',
+  selector: 'thy-dialogs-layout',
   templateUrl: './thy-dialogs-layout.component.html',
   styleUrls: ['./thy-dialogs-layout.component.scss']
 })

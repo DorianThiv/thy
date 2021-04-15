@@ -5,7 +5,7 @@ import { ThyFormFieldColorPickerService } from './thy-form-field-color-picker.se
 
 
 @Component({
-  selector: 'app-thy-form-field-color-picker',
+  selector: 'thy-form-field-color-picker',
   templateUrl: './thy-form-field-color-picker.component.html',
   styleUrls: ['./thy-form-field-color-picker.component.scss']
 })

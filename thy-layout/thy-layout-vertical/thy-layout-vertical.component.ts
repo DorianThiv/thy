@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ThyPlatformService } from '../../thy-platform/thy-platform.service';
 
 @Component({
-  selector: 'app-thy-layout-vertical',
+  selector: 'thy-layout-vertical',
   templateUrl: './thy-layout-vertical.component.html',
   styleUrls: ['./thy-layout-vertical.component.scss']
 })

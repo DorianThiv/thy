@@ -151,6 +151,7 @@ export class ThyTranslateService {
 
     constructor(private intl: IntlService) {
         this._default = this.supportedLangs[0];
+        this.initialize(navigator.language);
     }
 
     public initialize(lang: string) {

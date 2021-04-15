@@ -7,7 +7,7 @@ const SplitterClosedSize = 0;
 const SplitterFullSize = 100;
 
 @Component({
-  selector: 'app-thy-layout-horizontal',
+  selector: 'thy-layout-horizontal',
   templateUrl: './thy-layout-horizontal.component.html',
   styleUrls: ['./thy-layout-horizontal.component.scss']
 })

@@ -10,7 +10,7 @@ export const SplitterNestedClose = 0;
 export const SplitterNestedFull = 100;
 
 @Component({
-  selector: 'app-thy-layout-nested',
+  selector: 'thy-layout-nested',
   templateUrl: './thy-layout-nested.component.html',
   styleUrls: ['./thy-layout-nested.component.scss']
 })

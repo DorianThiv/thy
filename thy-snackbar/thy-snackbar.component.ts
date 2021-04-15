@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-thy-snackbar',
+  selector: 'thy-snackbar',
   templateUrl: './thy-snackbar.component.html',
   styleUrls: ['./thy-snackbar.component.scss']
 })

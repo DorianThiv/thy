@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThyToolbarComponent } from '../thy-toolbar.component';
 
 @Component({
-  selector: 'app-thy-toolbar-mini',
+  selector: 'thy-toolbar-mini',
   templateUrl: './thy-toolbar-mini.component.html',
   styleUrls: ['./thy-toolbar-mini.component.scss']
 })

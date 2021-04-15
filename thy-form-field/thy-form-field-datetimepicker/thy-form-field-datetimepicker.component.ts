@@ -6,7 +6,7 @@ import { DateAdapter } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker/datepicker-input-base';
 
 @Component({
-  selector: 'app-thy-form-field-datetimepicker',
+  selector: 'thy-form-field-datetimepicker',
   templateUrl: './thy-form-field-datetimepicker.component.html',
   styleUrls: [
     '../models/thy-form-elements.scss',

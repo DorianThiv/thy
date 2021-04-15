@@ -13,7 +13,7 @@ enum ThyPeriodMode {
   Other
 }
 @Component({
-  selector: 'app-thy-period-selection',
+  selector: 'thy-period-selection',
   templateUrl: './thy-period-selection.component.html',
   styleUrls: ['./thy-period-selection.component.scss']
 })

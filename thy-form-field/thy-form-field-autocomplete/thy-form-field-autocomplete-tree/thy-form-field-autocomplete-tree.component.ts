@@ -4,7 +4,7 @@ import { of, Observable } from 'rxjs';
 import { ThyFormFieldAutocompleteTreeModel } from '../models/thy-from-field-autocomplete-tree-model.class';
 
 @Component({
-  selector: 'app-thy-form-field-autocomplete-tree',
+  selector: 'thy-form-field-autocomplete-tree',
   templateUrl: './thy-form-field-autocomplete-tree.component.html',
   styleUrls: ['./thy-form-field-autocomplete-tree.component.scss']
 })

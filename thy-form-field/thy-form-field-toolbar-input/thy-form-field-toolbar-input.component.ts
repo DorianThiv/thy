@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 
 @Component({
-  selector: 'app-thy-form-field-toolbar-input',
+  selector: 'thy-form-field-toolbar-input',
   templateUrl: './thy-form-field-toolbar-input.component.html',
   styleUrls: ['./thy-form-field-toolbar-input.component.scss']
 })

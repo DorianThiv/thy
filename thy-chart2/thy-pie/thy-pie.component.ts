@@ -4,7 +4,7 @@ import { ThyTranslateService } from '../../thy-translate';
 import { ThyFormatService } from '../../thy-format/thy-format.service';
 
 @Component({
-  selector: 'app-thy-pie',
+  selector: 'thy-pie',
   templateUrl: '../thy-chart2.component.html',
   styleUrls: ['./thy-pie.component.scss']
 })

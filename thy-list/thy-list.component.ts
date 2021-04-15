@@ -3,7 +3,7 @@ import { ThyListGenericViewModel } from './models/thy-list-generic-view.class';
 import { ThyListViewModel } from './models/thy-list-view.class';
 
 @Component({
-  selector: 'app-thy-list',
+  selector: 'thy-list',
   templateUrl: './thy-list.component.html',
   styleUrls: ['./thy-list.component.scss']
 })

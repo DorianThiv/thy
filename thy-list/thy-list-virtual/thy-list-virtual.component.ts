@@ -4,7 +4,7 @@ import { ThyListCustomComponent } from '../thy-list-custom/thy-list-custom.compo
 import { ThyListViewModel } from '../models/thy-list-view.class';
 
 @Component({
-  selector: 'app-thy-list-virtual',
+  selector: 'thy-list-virtual',
   templateUrl: './thy-list-virtual.component.html',
   styleUrls: ['./thy-list-virtual.component.scss']
 })

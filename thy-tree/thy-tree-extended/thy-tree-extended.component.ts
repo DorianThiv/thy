@@ -6,7 +6,7 @@ import { ThyTreeViewModel } from '../models/thy-tree-view.class';
 import { ThyTreeExtendedChangeEvent } from '../models/thy-tree-change.event';
 
 @Component({
-  selector: 'app-thy-tree-extended',
+  selector: 'thy-tree-extended',
   templateUrl: '../thy-tree.component.html',
   styleUrls: ['../thy-tree.component.scss']
 })

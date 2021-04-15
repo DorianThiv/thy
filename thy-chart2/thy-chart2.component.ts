@@ -6,7 +6,7 @@ import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { ThyFormatService } from '../thy-format/thy-format.service';
 
 @Component({
-  selector: 'app-thy-chart2',
+  selector: 'thy-chart2',
   templateUrl: './thy-chart2.component.html',
   styleUrls: ['./thy-chart2.component.scss']
 })

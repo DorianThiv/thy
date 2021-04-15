@@ -6,7 +6,7 @@ import { ThyDialogsService } from '../thy-dialogs/thy-dialogs.service';
 import { ThyTranslateService } from '../thy-translate';
 
 @Component({
-  selector: 'app-thy-file-import',
+  selector: 'thy-file-import',
   templateUrl: './thy-file-import.component.html',
   styleUrls: ['../thy-styles/thy-style.scss', './thy-file-import.component.scss']
 })
