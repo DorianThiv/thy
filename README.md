@@ -10,7 +10,7 @@ Will improve as NPM package.
 
 ## Add as submodule
 
-``` git submodule add  ```
+``` git submodule add https://github.com/DorianThiv/thy.git ```
 
 ## Required modules
 
