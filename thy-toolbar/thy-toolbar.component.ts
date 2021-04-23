@@ -8,12 +8,13 @@ import { MatToolbar } from '@angular/material/toolbar';
 })
 export class ThyToolbarComponent {
 
-  @ViewChild('toolbar', { static: false }) toolbar: MatToolbar;
+  @ViewChild('toolbar') toolbar: MatToolbar;
 
   @Input() title: string;
   @Input() elevation = 0;
   @Input() style = {};
   @Input() class = '';
+  @Input() color = 'primary';
 
   @Input() showToggler = false;
 

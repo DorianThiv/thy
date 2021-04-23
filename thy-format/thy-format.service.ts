@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { IntlService } from '@progress/kendo-angular-intl';
 import { ThyPeriodModel } from '../thy-period/models/thy-period-model.class';
 import { ThyPeriodUnit } from '../thy-period/models/thy-period-unit.enum';
 import { ThyTranslateService } from '../thy-translate';
@@ -15,7 +14,7 @@ export interface ThyFormatColorOpacity {
 })
 export class ThyFormatService {
 
-  constructor(private translateService: ThyTranslateService, private intl: IntlService) { }
+  constructor(private translateService: ThyTranslateService) { }
 
   public static formatDateToMicrosoftStatic(date: Date): string {
     return date ? `\/Date(${date.getTime().toString()}+0${(-(date.getTimezoneOffset() / 60)) * 100})\/` : null;
@@ -320,17 +319,17 @@ export class ThyFormatService {
               if (typeof(date) === 'string') {
                   date = new Date(parseInt(date.substr(6), 10));
               }
-              switch (unit) {
-                  case ThyPeriodUnit.Hour:
-                      return this.intl.formatDate(date, this.translateService.getCurrentLongPatternHours(), this.translateService.getCurrentLang());
-                  case ThyPeriodUnit.Day:
-                      return this.intl.formatDate(date, this.translateService.getCurrentLongPattern(), this.translateService.getCurrentLang());
-                  case ThyPeriodUnit.Month:
-                  case ThyPeriodUnit.Year:
-                      return this.intl.formatDate(date, this.translateService.getCurrentMonthPattern(), this.translateService.getCurrentLang());
-                  default:
-                      return this.intl.formatDate(date, this.translateService.getCurrentShortPattern(), this.translateService.getCurrentLang());
-              }
+              // switch (unit) {
+              //     case ThyPeriodUnit.Hour:
+              //         return this.intl.formatDate(date, this.translateService.getCurrentLongPatternHours(), this.translateService.getCurrentLang());
+              //     case ThyPeriodUnit.Day:
+              //         return this.intl.formatDate(date, this.translateService.getCurrentLongPattern(), this.translateService.getCurrentLang());
+              //     case ThyPeriodUnit.Month:
+              //     case ThyPeriodUnit.Year:
+              //         return this.intl.formatDate(date, this.translateService.getCurrentMonthPattern(), this.translateService.getCurrentLang());
+              //     default:
+              //         return this.intl.formatDate(date, this.translateService.getCurrentShortPattern(), this.translateService.getCurrentLang());
+              // }
           } catch (error) {
               console.log(error);
           }

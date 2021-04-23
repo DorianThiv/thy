@@ -1,6 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { dictionary } from './translations';
-import { IntlService } from '@progress/kendo-angular-intl';
 import { ThyLangIdentifiers } from './models/thy-translate.enum';
 import { ThyPeriodUnit } from '../thy-period/models/thy-period-unit.enum';
 
@@ -149,7 +148,7 @@ export class ThyTranslateService {
 
     public langChanged = new EventEmitter();
 
-    constructor(private intl: IntlService) {
+    constructor() {
         this._default = this.supportedLangs[0];
         this.initialize(navigator.language);
     }
@@ -288,57 +287,57 @@ export class ThyTranslateService {
     // Format
 
     public convertDateToString(date: Date, unit: ThyPeriodUnit) {
-        switch (unit) {
-            case ThyPeriodUnit.Hour:
-                return this.intl.formatDate(date, this.getCurrentLongPatternHours(), this.getCurrentLang());
-            case ThyPeriodUnit.Day:
-                return this.intl.formatDate(date, this.getCurrentLongPattern(), this.getCurrentLang());
-            case ThyPeriodUnit.Month:
-                return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
-            case ThyPeriodUnit.Year:
-                return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-            default:
-                return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-        }
+        // switch (unit) {
+        //     case ThyPeriodUnit.Hour:
+        //         return this.intl.formatDate(date, this.getCurrentLongPatternHours(), this.getCurrentLang());
+        //     case ThyPeriodUnit.Day:
+        //         return this.intl.formatDate(date, this.getCurrentLongPattern(), this.getCurrentLang());
+        //     case ThyPeriodUnit.Month:
+        //         return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
+        //     case ThyPeriodUnit.Year:
+        //         return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        //     default:
+        //         return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        // }
     }
 
     public getDatePer(date: Date, level: 'day' | 'month' | 'year') {
-        switch (level) {
-        case 'day':
-            return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-        case 'month':
-            return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
-        case 'year':
-            return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-        default:
-            return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-        }
+        // switch (level) {
+        // case 'day':
+        //     return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        // case 'month':
+        //     return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
+        // case 'year':
+        //     return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        // default:
+        //     return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        // }
     }
 
     public getFullDate(date: Date | string) {
-        if (date) {
-        try {
-            if (typeof(date) === 'string') {
-                date = new Date(parseInt(date.substr(6), 10));
-            }
-            return this.intl.formatDate(date, this.getCurrentFullPattern(), this.getCurrentLang());
-        } catch (error) {
-            console.log(error);
-        }
-        }
+        // if (date) {
+        // try {
+        //     if (typeof(date) === 'string') {
+        //         date = new Date(parseInt(date.substr(6), 10));
+        //     }
+        //     return this.intl.formatDate(date, this.getCurrentFullPattern(), this.getCurrentLang());
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        // }
     }
 
     public formatDate(date: Date | string, short: boolean = false) {
-        if (date) {
-            try {
-                if (typeof(date) === 'string') {
-                    date = new Date(parseInt(date.substr(6), 10));
-                }
-                return this.intl.formatDate(date, short ? this.getCurrentShortPattern() : this.getCurrentLongPatternHours(), this.getCurrentLang());
-            } catch (error) {
-                console.log(error);
-            }
-        }
+        // if (date) {
+        //     try {
+        //         if (typeof(date) === 'string') {
+        //             date = new Date(parseInt(date.substr(6), 10));
+        //         }
+        //         return this.intl.formatDate(date, short ? this.getCurrentShortPattern() : this.getCurrentLongPatternHours(), this.getCurrentLang());
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // }
     }
 
     /**
@@ -348,26 +347,26 @@ export class ThyTranslateService {
      * @param {ThyPeriodUnit} unit `ThyPeriodUnit`
      */
     public formatDate2(date: Date | string, unit: ThyPeriodUnit) {
-        if (date) {
-            try {
-                if (typeof(date) === 'string') {
-                    date = new Date(parseInt(date.substr(6), 10));
-                }
-                switch (unit) {
-                    case ThyPeriodUnit.Hour:
-                        return this.intl.formatDate(date, this.getCurrentLongPatternHours(), this.getCurrentLang());
-                    case ThyPeriodUnit.Day:
-                        return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-                    case ThyPeriodUnit.Month:
-                    case ThyPeriodUnit.Year:
-                        return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
-                    default:
-                        return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
+        // if (date) {
+        //     try {
+        //         if (typeof(date) === 'string') {
+        //             date = new Date(parseInt(date.substr(6), 10));
+        //         }
+        //         switch (unit) {
+        //             case ThyPeriodUnit.Hour:
+        //                 return this.intl.formatDate(date, this.getCurrentLongPatternHours(), this.getCurrentLang());
+        //             case ThyPeriodUnit.Day:
+        //                 return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        //             case ThyPeriodUnit.Month:
+        //             case ThyPeriodUnit.Year:
+        //                 return this.intl.formatDate(date, this.getCurrentMonthPattern(), this.getCurrentLang());
+        //             default:
+        //                 return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
+        //         }
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // }
     }
 
     public formatDuration(days: number, hours: number, minutes: number, secondes: number): string {

@@ -8,6 +8,11 @@ export class ThyRestGetRequest {
 
     constructor(request: string, options?: Map<string, any>, useTime = false) {
         this.request = `${request}`;
+        if (options) {
+            options.forEach((value: string, key: string) => {
+                this.request += `&${key}=${value}`;
+            });
+        }
     }
 
 }
