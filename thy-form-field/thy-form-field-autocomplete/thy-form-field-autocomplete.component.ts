@@ -83,7 +83,6 @@ export class ThyFormFieldAutocompleteComponent extends ThyFormFieldBase {
   public displayWithFunc(value: any) {
     if (!value) { return ''; }
     const str = typeof(value) === 'string' ? value : this.property ? value[this.property] : value['name'];
-    console.log(str);
     return str;
   }
 

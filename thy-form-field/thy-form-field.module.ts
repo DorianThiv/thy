@@ -26,6 +26,7 @@ import { ThyFormFieldToolbarDatepickerComponent } from './thy-form-field-toolbar
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatDateFormats } from '@angular/material/core';
 import { ThyTranslateService } from '../thy-translate';
 import { ThyFormFieldAutocompleteLazyComponent } from './thy-form-field-autocomplete/thy-form-field-autocomplete-lazy/thy-form-field-autocomplete-lazy.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const FR_FORMAT: MatDateFormats = {
   parse: {
@@ -71,6 +72,7 @@ let format: MatDateFormats;
   imports: [
     CommonModule,
     FormsModule,
+    ScrollingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
