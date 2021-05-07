@@ -25,6 +25,7 @@ import { ThyFormFieldToolbarInputComponent } from './thy-form-field-toolbar-inpu
 import { ThyFormFieldToolbarDatepickerComponent } from './thy-form-field-toolbar-datepicker/thy-form-field-toolbar-datepicker.component';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatDateFormats } from '@angular/material/core';
 import { ThyTranslateService } from '../thy-translate';
+import { ThyFormFieldAutocompleteLazyComponent } from './thy-form-field-autocomplete/thy-form-field-autocomplete-lazy/thy-form-field-autocomplete-lazy.component';
 
 const FR_FORMAT: MatDateFormats = {
   parse: {
@@ -64,7 +65,8 @@ let format: MatDateFormats;
     ThyFormFieldDatetimepickerComponent,
     ThyFormFieldToolbarInputComponent,
     ThyFormFieldAutocompleteTreeComponent,
-    ThyFormFieldToolbarDatepickerComponent
+    ThyFormFieldToolbarDatepickerComponent,
+    ThyFormFieldAutocompleteLazyComponent
   ],
   imports: [
     CommonModule,
@@ -93,6 +95,7 @@ let format: MatDateFormats;
     ThyFormFieldDatetimepickerComponent,
     ThyFormFieldToolbarInputComponent,
     ThyFormFieldAutocompleteTreeComponent,
+    ThyFormFieldAutocompleteLazyComponent,
     ThyFormFieldToolbarDatepickerComponent
   ],
   providers: [

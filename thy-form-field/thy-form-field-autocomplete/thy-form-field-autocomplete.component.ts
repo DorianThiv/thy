@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { ThyFormFieldBase } from '../models/thy-form-field.class';
 import { FormControl } from '@angular/forms';
 import { of, Observable } from 'rxjs';
@@ -58,6 +58,11 @@ export class ThyFormFieldAutocompleteComponent extends ThyFormFieldBase {
 
   @Input() displayValue: string;
 
+  /**
+   * Triggered when user click on dropdown icon.
+   */
+   @Output() clickDropdown = new EventEmitter();
+
   public get classesHtml(): string[] {
     const classes = this.class ? this.class.split(' ') : [];
     return [].concat('thy-html-input', classes);
@@ -77,7 +82,9 @@ export class ThyFormFieldAutocompleteComponent extends ThyFormFieldBase {
 
   public displayWithFunc(value: any) {
     if (!value) { return ''; }
-    return typeof(value) === 'string' ? value : this.property ? value[this.property] : value['Name'];
+    const str = typeof(value) === 'string' ? value : this.property ? value[this.property] : value['name'];
+    console.log(str);
+    return str;
   }
 
   public onInputChange(value: string) {
