@@ -41,4 +41,25 @@ In `angular.json` add styles.
 ],
 ```
 
+In `tsconfig.app.json` add Highcharts CommonJS reference.
+
+```
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [
+      "highcharts" <======
+    ]
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}
+
+```
 

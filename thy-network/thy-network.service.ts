@@ -12,6 +12,8 @@ export class ThyNetworkService {
 
   public token: string;
 
+  public get isConnected(): boolean { return this.token ? true : false; }
+
   public get url() { return `${this.proto}//${this.host}:${this.port}/#/`; }
 
   public get uri() { return `${this.proto}//${this.host}:${this.port}${this.api}`; }

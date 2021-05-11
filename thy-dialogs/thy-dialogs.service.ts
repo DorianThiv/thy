@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ThyDialogsMessagesComponent } from './thy-dialogs-messages/thy-dialogs-messages.component';
 import { ThyDialogConfirmResponse, ThyDialogsConfirmComponent, IDialogMessage } from './thy-dialogs-confirm/thy-dialogs-confirm.component';
-import { ThyPeriodComponent } from '../thy-period/thy-period.component';
-import { ThyPeriodModel } from '../thy-period/models/thy-period-model.class';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
@@ -26,21 +24,6 @@ export class ThyDialogsService {
     const dialogRef = this.matDialogService.open(ThyDialogsConfirmComponent, {
       width: '400px',
       data: data
-    });
-    return dialogRef.afterClosed();
-  }
-
-  public password() {
-    // const dialogRef = this.matDialogService.open(ThyDialogsChangePasswordComponent, {
-    //   width: '600px'
-    // });
-    // return dialogRef.afterClosed();
-  }
-
-  public period(data?: { period?: ThyPeriodModel, compactPeriod?: string, options?: { showDefault?: boolean } }) {
-    const dialogRef = this.matDialogService.open(ThyPeriodComponent, {
-      width: '800px',
-      data: data ? data : {}
     });
     return dialogRef.afterClosed();
   }

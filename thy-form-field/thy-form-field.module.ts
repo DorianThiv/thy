@@ -6,6 +6,7 @@ import { ThyFormFieldAutocompleteComponent } from './thy-form-field-autocomplete
 import { ThyFormFieldAutocompleteTreeComponent } from './thy-form-field-autocomplete/thy-form-field-autocomplete-tree/thy-form-field-autocomplete-tree.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ThyTranslateModule } from '../thy-translate/thy-translate.module';
@@ -27,6 +28,7 @@ import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatDateFormats } from '@angular/mate
 import { ThyTranslateService } from '../thy-translate';
 import { ThyFormFieldAutocompleteLazyComponent } from './thy-form-field-autocomplete/thy-form-field-autocomplete-lazy/thy-form-field-autocomplete-lazy.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 const FR_FORMAT: MatDateFormats = {
   parse: {
@@ -81,6 +83,7 @@ let format: MatDateFormats;
     MatButtonModule,
     MatMenuModule,
     MatSelectModule,
+    MatMomentDateModule,
     MatDatepickerModule,
     MatTooltipModule,
     ColorPickerModule,

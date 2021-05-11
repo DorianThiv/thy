@@ -12,7 +12,6 @@ export class ThyFormFieldAutocompleteLazyComponent extends ThyFormFieldAutocompl
   protected _list: any[];
   @Input()
   set list(value: any[]) {
-    console.log(value);
     this._list = value;
   }
   get list(): any[] {

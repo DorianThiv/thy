@@ -9,6 +9,7 @@
         [name]="name"
         [title]="title"
         [rows]="rows"
+        [required]="required"
         autocomplete="off">
     </textarea>
     <button *ngIf="suffix" mat-button matSuffix mat-icon-button class="thy-suffix-button" [disabled]="suffixDisabled" (click)="onSuffix($event)">

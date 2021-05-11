@@ -299,6 +299,7 @@ export class ThyTranslateService {
         //     default:
         //         return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
         // }
+        return null;
     }
 
     public getDatePer(date: Date, level: 'day' | 'month' | 'year') {
@@ -312,6 +313,7 @@ export class ThyTranslateService {
         // default:
         //     return this.intl.formatDate(date, this.getCurrentShortPattern(), this.getCurrentLang());
         // }
+        return null;
     }
 
     public getFullDate(date: Date | string) {
@@ -325,6 +327,7 @@ export class ThyTranslateService {
         //     console.log(error);
         // }
         // }
+        return null;
     }
 
     public formatDate(date: Date | string, short: boolean = false) {
@@ -338,6 +341,7 @@ export class ThyTranslateService {
         //         console.log(error);
         //     }
         // }
+        return null;
     }
 
     /**
@@ -367,6 +371,7 @@ export class ThyTranslateService {
         //         console.log(error);
         //     }
         // }
+        return null;
     }
 
     public formatDuration(days: number, hours: number, minutes: number, secondes: number): string {

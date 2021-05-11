@@ -1,6 +1,6 @@
 <mat-form-field [ngStyle]="style" [ngClass]="getClasses()" appearance="outline" color="accent" >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
-    <mat-select [(ngModel)]="value" (ngModelChange)="valueChange.emit(value)" [disabled]="disabled" [name]="name">
+    <mat-select [(ngModel)]="value" (ngModelChange)="valueChange.emit(value)" [disabled]="disabled" [required]="required" [name]="name">
         <mat-select-trigger>
             <ng-container *ngFor="let option of options">
                 <ng-container *ngIf="value === option.Value">
