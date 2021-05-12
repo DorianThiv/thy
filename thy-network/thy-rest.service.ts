@@ -11,21 +11,21 @@ export class ThyRestService {
   constructor(private networkService: ThyNetworkService, private http: HttpClient) {
   }
 
-  public async get<T>(model: ThyRestGetRequest, noTime = false): Promise<T> {
+  public async get<T>(model: ThyRestGetRequest, noTime = false): Promise<any> {
     const date = noTime === false ? new Date(Date.now()).getTime() : null;
-    return await this.http.get<T>(`${this.networkService.uri}${model.request}`).toPromise();
+    return await this.http.get<T>(`${this.networkService.uri}${model.request}`).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
   }
 
   public async post<T>(model: ThyRestPostRequest<any>): Promise<any> {
     return await this.http.post<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
   }
 
-  public async put<T>(model: ThyRestPutRequest<T>): Promise<T> {
-    return await this.http.put<T>(this.networkService.uri + model.request, model.body).toPromise();
+  public async put<T>(model: ThyRestPutRequest<T>): Promise<any> {
+    return await this.http.put<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
   }
 
-  public async delete<T>(model: ThyRestDeleteRequest): Promise<T> {
-    return await this.http.delete<T>(this.networkService.uri + model.request).toPromise();
+  public async delete<T>(model: ThyRestDeleteRequest): Promise<any> {
+    return await this.http.delete<T>(this.networkService.uri + model.request).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
   }
 
   private async onError(reason: HttpErrorResponse) {
@@ -37,6 +37,7 @@ export class ThyRestService {
         }
         break;
       default:
+        console.error(reason);
         break;
     }
   }
