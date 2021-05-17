@@ -21,6 +21,8 @@
             {{ this.displayWith(model) }}
         </mat-option>
     </mat-autocomplete>
+    <!-- Loading -->
+    <mat-spinner matSuffix *ngIf="loading" mode="indeterminate" diameter="17"></mat-spinner>
     <!-- Suffix -->
     <button mat-button *ngIf="suffix" matSuffix mat-icon-button class="thy-suffix-button" (click)="onSuffix($event)">
       <mat-icon class="thy-suffix-icon">{{ suffix }}</mat-icon>

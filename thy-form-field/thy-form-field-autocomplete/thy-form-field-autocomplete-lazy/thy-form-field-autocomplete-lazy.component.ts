@@ -18,6 +18,23 @@ export class ThyFormFieldAutocompleteLazyComponent extends ThyFormFieldAutocompl
     return this._list;
   }
 
+  private _loading = false;
+  private _isLoaded = false;
+  public get loading(): boolean { return this._loading; }
+  public set loading(value: boolean) {
+    if (value) {
+      this._isLoaded = false;
+      setTimeout(() => {
+        if (!this._isLoaded) {
+          this._loading = true;
+        }
+      }, 500);
+    } else {
+      this._isLoaded = true;
+      this._loading = false;
+    }
+  }
+
   constructor() {
     super();
   }
