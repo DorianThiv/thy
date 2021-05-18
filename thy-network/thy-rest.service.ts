@@ -11,21 +11,29 @@ export class ThyRestService {
   constructor(private networkService: ThyNetworkService, private http: HttpClient) {
   }
 
-  public async get<T>(model: ThyRestGetRequest, noTime = false): Promise<any> {
-    const date = noTime === false ? new Date(Date.now()).getTime() : null;
-    return await this.http.get<T>(`${this.networkService.uri}${model.request}`).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
+  public async get<T>(model: ThyRestGetRequest, ketch = true): Promise<any> {
+
+    return ketch ?
+      await this.http.get<T>(`${this.networkService.uri}${model.request}`).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason)) :
+      await this.http.get<T>(`${this.networkService.uri}${model.request}`).toPromise();
   }
 
-  public async post<T>(model: ThyRestPostRequest<any>): Promise<any> {
-    return await this.http.post<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
+  public async post<T>(model: ThyRestPostRequest<any>, ketch = true): Promise<any> {
+    return ketch ?
+      await this.http.post<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason)) :
+      await this.http.post<T>(this.networkService.uri + model.request, model.body).toPromise();
   }
 
-  public async put<T>(model: ThyRestPutRequest<T>): Promise<any> {
-    return await this.http.put<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
+  public async put<T>(model: ThyRestPutRequest<T>, ketch = true): Promise<any> {
+    return ketch ?
+      await this.http.put<T>(this.networkService.uri + model.request, model.body).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason)) :
+      await this.http.put<T>(this.networkService.uri + model.request, model.body).toPromise();
   }
 
-  public async delete<T>(model: ThyRestDeleteRequest): Promise<any> {
-    return await this.http.delete<T>(this.networkService.uri + model.request).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason));
+  public async delete<T>(model: ThyRestDeleteRequest, ketch = true): Promise<any> {
+    return ketch ?
+      await this.http.delete<T>(this.networkService.uri + model.request).toPromise().catch((reason: HttpErrorResponse) => this.onError(reason)) :
+      await this.http.delete<T>(this.networkService.uri + model.request).toPromise();
   }
 
   private async onError(reason: HttpErrorResponse) {

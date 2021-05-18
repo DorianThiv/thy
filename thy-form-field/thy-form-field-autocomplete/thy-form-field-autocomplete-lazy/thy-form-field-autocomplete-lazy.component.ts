@@ -1,5 +1,6 @@
 import { FixedSizeVirtualScrollStrategy, VIRTUAL_SCROLL_STRATEGY } from '@angular/cdk/scrolling';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete/autocomplete';
 import { ThyFormFieldAutocompleteComponent } from '../thy-form-field-autocomplete.component';
 
 @Component({
@@ -37,6 +38,11 @@ export class ThyFormFieldAutocompleteLazyComponent extends ThyFormFieldAutocompl
 
   constructor() {
     super();
+  }
+
+  public onEnter(value: any) {
+    console.log(value);
+    
   }
 
   public onInputChange(value: string) {
