@@ -7,7 +7,8 @@ export class ThyNetworkService {
 
   private proto: string = isDevMode() ? 'http:' : window.location.protocol;
   private host: string = window.location.hostname;
-  private port: string = isDevMode() ? '44342' : window.location.port;
+  private port: string = window.location.port;
+  private uriport: string = isDevMode() ? '44342' : window.location.port;
   private api = '/api/';
 
   public token: string;
@@ -16,9 +17,9 @@ export class ThyNetworkService {
 
   public get url() { return `${this.proto}//${this.host}:${this.port}/#/`; }
 
-  public get uri() { return `${this.proto}//${this.host}:${this.port}${this.api}`; }
+  public get uri() { return `${this.proto}//${this.host}:${this.uriport}${this.api}`; }
 
-  public get wsUri() { return `wss://${this.host}:${this.port}${this.api}`; }
+  public get wsUri() { return `wss://${this.host}:${this.uriport}${this.api}`; }
 
   constructor() {
   }
