@@ -10,9 +10,10 @@ import { ThyListCustomComponent } from './thy-list-custom/thy-list-custom.compon
 import { ThyListVirtualComponent } from './thy-list-virtual/thy-list-virtual.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatMenuModule } from '@angular/material/menu';
+import { ThyListSelectionComponent } from './thy-list-selection/thy-list-selection.component';
 
 @NgModule({
-  declarations: [ThyListComponent, ThyListCustomComponent, ThyListVirtualComponent],
+  declarations: [ThyListComponent, ThyListCustomComponent, ThyListVirtualComponent, ThyListSelectionComponent],
   imports: [
     CommonModule,
     ScrollingModule,
@@ -23,6 +24,6 @@ import { MatMenuModule } from '@angular/material/menu';
     ThyFieldsetModule,
     ThyFormFieldModule
   ],
-  exports: [ThyListComponent, ThyListCustomComponent, ThyListVirtualComponent]
+  exports: [ThyListComponent, ThyListCustomComponent, ThyListVirtualComponent, ThyListSelectionComponent]
 })
 export class ThyListModule { }
