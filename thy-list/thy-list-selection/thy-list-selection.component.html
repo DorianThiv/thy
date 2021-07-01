@@ -1,30 +1,52 @@
 <!-- List -->
-<thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" [actionMenu]="actionMenu" (clickAction)="onAdd()">
+<ng-container *ngIf="showFieldset">
 
-    <ng-container *ngIf="showHeader">
+    <thy-fieldset [style]="styleFieldset" [class]="classFieldset" [label]="title" [action]="action" [actionMenu]="actionMenu" (clickAction)="onAdd()">
+    
+        <ng-container *ngIf="showHeader">
+    
+            <div *ngIf="hasIcon" class="ui-g-1"></div>
+    
+            <div #header [ngClass]="{ 'ui-g-9': hasIcon, 'ui-g-10': !hasIcon }"><ng-content select="[header]"></ng-content></div>
+    
+            <div class="ui-g-2"></div>
+    
+            <mat-divider class="ui-g-12"></mat-divider>
+    
+        </ng-container>
+    
+        <mat-selection-list #matList style="padding-top: 0px;" [disabled]="!selectable" (selectionChange)="onSelection($event)">
+    
+            <mat-list-option *ngFor="let item of list" class="ui-g-12 list-selection-item" checkboxPosition="before" [value]="item" [selected]="item.selected" [disableRipple]="true">
+    
+                <div class="ui-g-10" style="height: inherit;">
+    
+                    <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+    
+                </div>
+    
+            </mat-list-option>
+    
+        </mat-selection-list>
+    
+    </thy-fieldset>
 
-        <div *ngIf="hasIcon" class="ui-g-1"></div>
+</ng-container>
 
-        <div #header [ngClass]="{ 'ui-g-9': hasIcon, 'ui-g-10': !hasIcon }"><ng-content select="[header]"></ng-content></div>
+<ng-container *ngIf="!showFieldset">
 
-        <div class="ui-g-2"></div>
-
-        <mat-divider class="ui-g-12"></mat-divider>
-
-    </ng-container>
-
-    <mat-selection-list #matList style="padding-top: 0px;" [disabled]="!selectable" (selectionChange)="onSelection($event)">
-
+    <mat-selection-list #matList style="padding-top: 0px;" [disabled]="!selectable" [multiple]="multiple" (selectionChange)="onSelection($event)">
+    
         <mat-list-option *ngFor="let item of list" class="ui-g-12 list-selection-item" checkboxPosition="before" [value]="item" [selected]="item.selected" [disableRipple]="true">
-
+    
             <div class="ui-g-10" style="height: inherit;">
-
+    
                 <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
-
+    
             </div>
-
+    
         </mat-list-option>
-
+    
     </mat-selection-list>
 
-</thy-fieldset>
+</ng-container>

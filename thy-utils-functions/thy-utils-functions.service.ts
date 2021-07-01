@@ -9,6 +9,18 @@ export function isNumber(v: number | string): boolean {
   return typeof(v) === 'number' || v.match(/^[-+]?(\d+(?:[\.\,]\d*)?)$/) ? true : false;
 }
 
+export function replaceUrls(message: string) {
+  if(!message) return;
+    var urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+    return message.replace(urlRegex, function (url) {
+      var hyperlink = url;
+      if (!hyperlink.match('^https?:\/\/')) {
+        hyperlink = 'http://' + hyperlink;
+      }
+      return `<a href="${hyperlink}">${url}</a>`;
+    });
+}
+
 @Injectable()
 export class ThyUtilsFunctionsService {
 

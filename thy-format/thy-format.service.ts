@@ -16,6 +16,18 @@ export class ThyFormatService {
 
   constructor(private translateService: ThyTranslateService) { }
 
+  public replaceUrls(message: string) {
+    if(!message) return;
+    var urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+    return message.replace(urlRegex, function (url) {
+      var hyperlink = url;
+      if (!hyperlink.match('^https?:\/\/')) {
+        hyperlink = 'http://' + hyperlink;
+      }
+      return '<a href="' + hyperlink + '">' + url + '</a>'
+    });
+  }
+
   public static formatDateToMicrosoftStatic(date: Date): string {
     return date ? `\/Date(${date.getTime().toString()}+0${(-(date.getTimezoneOffset() / 60)) * 100})\/` : null;
   }

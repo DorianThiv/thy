@@ -30,6 +30,7 @@ export class ThyListSelectionComponent {
   @Input() style: object;
   @Input() selectable = true;
   @Input() editable = false;
+  @Input() multiple = true;
 
   /**
    * Can use dialog instead of direct edition.
@@ -38,6 +39,7 @@ export class ThyListSelectionComponent {
   @Input() editAsDialog = false;
   @Input() manageAutomatically = true;
   @Input() showHeader = false;
+  @Input() showFieldset = true;
 
   @Input() styleFieldset: object;
   @Input() classFieldset = 'ui-g-12';
