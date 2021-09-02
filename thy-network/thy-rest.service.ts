@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { COOKIE_CONSTENT_TOKEN, ThyCookiesService } from '../thy-cookies/thy-cookies.service';
 import { ThyRestDeleteRequest, ThyRestGetRequest, ThyRestPostRequest, ThyRestPutRequest } from './models/thy-rest-requests.class';
 import { ThyNetworkService } from './thy-network.service';
 
@@ -8,7 +9,7 @@ import { ThyNetworkService } from './thy-network.service';
 })
 export class ThyRestService {
 
-  constructor(private networkService: ThyNetworkService, private http: HttpClient) {
+  constructor(private networkService: ThyNetworkService, private http: HttpClient, private cookiesService: ThyCookiesService) {
   }
 
   public async get<T>(model: ThyRestGetRequest, ketch = true): Promise<any> {
@@ -40,8 +41,11 @@ export class ThyRestService {
     switch (reason.status) {
       case 401:
         if (this.networkService.token) {
-          const response = await this.post(new ThyRestPostRequest('login/refresh', { token: this.networkService.token }));
-          console.log(response);
+          const result: { token: string } = await this.post<any>(new ThyRestPostRequest('login/token', { token: this.networkService.token }));
+          if (result?.token) {
+            this.networkService.token = result.token;
+            this.cookiesService.set(COOKIE_CONSTENT_TOKEN, this.networkService.token);
+          }
         }
         break;
       default:

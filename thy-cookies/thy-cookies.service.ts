@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+export const COOKIE_CONSTENT_TOKEN = 'weevent_token';
+
 @Injectable({
   providedIn: 'root'
 })
