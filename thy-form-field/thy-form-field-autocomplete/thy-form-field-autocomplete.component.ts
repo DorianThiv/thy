@@ -113,6 +113,7 @@ export class ThyFormFieldAutocompleteComponent extends ThyFormFieldBase {
 
   public onDelete() {
     this.formController.setValue('');
+    this.trigger.writeValue('');
     this.valueChange.emit(null);
   }
 }

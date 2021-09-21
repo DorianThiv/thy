@@ -8,7 +8,7 @@ export class ThyNetworkService {
   private proto: string = isDevMode() ? 'http:' : window.location.protocol;
   private host: string = window.location.hostname;
   private port: string = window.location.port;
-  private uriport: string = isDevMode() ? '44342' : window.location.port;
+  private uriport: string = '44342';
   private api = '/api/';
 
   public token: string;

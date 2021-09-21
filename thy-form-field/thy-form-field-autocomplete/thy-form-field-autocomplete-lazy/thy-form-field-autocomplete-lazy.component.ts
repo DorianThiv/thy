@@ -42,7 +42,6 @@ export class ThyFormFieldAutocompleteLazyComponent extends ThyFormFieldAutocompl
 
   public onEnter(value: any) {
     console.log(value);
-    
   }
 
   public onInputChange(value: string) {

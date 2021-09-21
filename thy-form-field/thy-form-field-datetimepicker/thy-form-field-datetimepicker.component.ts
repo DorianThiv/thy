@@ -35,7 +35,7 @@ export class ThyFormFieldDatetimepickerComponent extends ThyFormFieldBase {
     //   date.setHours(!isNaN(Number(splitted[0])) ? Number(splitted[0]) : 0);
     //   date.setMinutes(!isNaN(Number(splitted[1])) ? Number(splitted[1]) : 0);
     // }
-    console.log(event); 
+    // console.log(event); 
     this.valueChange.emit(new Date(event));
   }
 }
