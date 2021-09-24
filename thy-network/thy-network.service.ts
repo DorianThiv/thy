@@ -19,7 +19,7 @@ export class ThyNetworkService {
 
   public get uri() { return `${this.proto}//${this.host}:${this.uriport}${this.api}`; }
 
-  public get wsUri() { return `wss://${this.host}:${this.uriport}${this.api}`; }
+  public get wsUri() { return `ws://${this.host}:${this.uriport}${this.api}`; }
 
   constructor() {
   }
