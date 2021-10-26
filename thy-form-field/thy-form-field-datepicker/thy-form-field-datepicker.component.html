@@ -6,6 +6,9 @@
     <mat-datepicker-toggle matSuffix [for]="pickerEnd">
         <mat-icon matDatepickerToggleIcon class="thy-suffix-icon">date_range</mat-icon>
     </mat-datepicker-toggle>
+    <button *ngIf="showDeleteSuffix && value" mat-button matSuffix mat-icon-button class="thy-suffix-button" (click)="onDelete()">
+        <mat-icon class="thy-suffix-icon">close</mat-icon>
+    </button>
 </mat-form-field>
 
 <ng-container *ngIf="noFormField">
