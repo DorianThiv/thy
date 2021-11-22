@@ -1,0 +1,52 @@
+.thy-splitter as-split {
+
+    position: relative;
+    height: 100% !important;
+    // font-size: 14px !important;
+    // line-height: 1.42857143 !important;
+
+    ::ng-deep .as-split-gutter {
+        position: relative;
+        background-color: #aaa;
+    }
+
+    ::ng-deep .as-split-gutter-icon {
+        position: absolute;
+        z-index: 999;
+        background-image: none !important;
+        background-color: #222;
+        transition: opacity .3s;
+        opacity: 0;
+    }
+
+    ::ng-deep .as-split-gutter.as-dragged .as-split-gutter-icon,
+    ::ng-deep .as-split-gutter-icon:hover {
+        opacity: .1;
+    }
+    
+    ::ng-deep .as-split-area {
+        background-color: transparent !important;
+    }
+
+    &.as-horizontal {
+        ::ng-deep .as-split-gutter-icon {
+            width: 17px !important;
+            height: 100% !important;
+            top: 0px !important;
+            bottom: 0px !important;
+            left: -8px !important;
+            right: 8px !important;
+        }
+    }
+
+    &.as-vertical {
+        ::ng-deep .as-split-gutter-icon {
+            height: 17px !important;
+            width: 100% !important;
+            top: -8px !important;
+            bottom: 8px !important;
+            left: 0px !important;
+            right: 0px !important;
+        }
+    }
+}

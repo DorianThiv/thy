@@ -1,6 +1,11 @@
-@import '../../thy-styles/thy-style.scss';
+@import '../models/thy-layout-style.scss';
+
+.thy-container {
+    height: 100%;
+}
 
 .body-container {
+    height: 100%;
     padding: 0;
 }
 

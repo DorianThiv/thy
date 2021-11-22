@@ -1,19 +1,19 @@
 <!-- <div id="datetime-picker-container" [class]="class" [ngStyle]="style" matTooltip="{{ tooltipText | translate }}" matTooltipPosition="{{ tooltipPosition }}">
-    <mat-form-field class="thy-form-field ui-g-8" appearance="outline" color="accent" [floatLabel]="floatLabel" >
+    <mat-form-field class="thy-form-field ui-g-8" appearance="outline"  [floatLabel]="floatLabel" >
         <mat-label>{{ '@global-date' | translate }} {{ labelDetails | translate }}</mat-label>
         <input matInput [matDatepicker]="pickerEnd" [formControl]="dateControl" (dateChange)="onDateChange($event)">
-        <mat-datepicker #pickerEnd color="accent" [disabled]="disabled"></mat-datepicker>
+        <mat-datepicker #pickerEnd  [disabled]="disabled"></mat-datepicker>
         <mat-datepicker-toggle matSuffix [for]="pickerEnd" [disabled]="disabled">
             <mat-icon matDatepickerToggleIcon class="thy-suffix-icon">date_range</mat-icon>
         </mat-datepicker-toggle>
     </mat-form-field>
-    <mat-form-field class="thy-form-field ui-g-4" appearance="outline" color="accent" [floatLabel]="floatLabel">
+    <mat-form-field class="thy-form-field ui-g-4" appearance="outline"  [floatLabel]="floatLabel">
         <mat-label>{{ '@global-hours' | translate }} {{ labelDetails | translate }}</mat-label>
         <input matInput [(ngModel)]="time" (ngModelChange)="onTimeChange()" [placeholder]="placeholder | translate" [disabled]="disabled" [name]="name" type="time" [title]="title" autocomplete="off"/>
     </mat-form-field>
 </div> -->
 
-<mat-form-field [class]="class" [ngStyle]="style" matTooltip="{{ tooltipText | translate }}" matTooltipPosition="{{ tooltipPosition }}" appearance="outline" color="accent">
+<mat-form-field [class]="class" [ngStyle]="style" matTooltip="{{ tooltipText | translate }}" matTooltipPosition="{{ tooltipPosition }}" appearance="outline" >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
     <input matInput [formControl]="dateControl" (ngModelChange)="onDateChange($event)" [placeholder]="placeholder | translate" [disabled]="disabled" [required]="required" [name]="name" type="datetime-local" [title]="title" autocomplete="off"/>
 </mat-form-field>

@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { ThyTranslateService } from '../../thy-translate';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker/datepicker-input-base';
+import { isMoment, Moment } from 'moment';
 
 @Component({
   selector: 'thy-form-field-datepicker',
@@ -44,7 +45,7 @@ export class ThyFormFieldDatepickerComponent extends ThyFormFieldBase {
   }
 
   public onDateChange(event: MatDatepickerInputEvent<Date>) {
-    this.valueChange.emit(event.value);
+    this.valueChange.emit(isMoment(event.value) ? (event.value as Moment).toDate() : event.value);
   }
 
   public onHtmlDateChange(date: Date) {

@@ -1,4 +1,4 @@
-<mat-form-field [ngStyle]="style" [ngClass]="getClasses()" appearance="outline" color="accent" >
+<mat-form-field [ngStyle]="style" [ngClass]="getClasses()" appearance="outline"  >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
     <mat-select [(ngModel)]="value" (ngModelChange)="valueChange.emit(value)" [disabled]="disabled" [required]="required" [name]="name">
         <mat-select-trigger>

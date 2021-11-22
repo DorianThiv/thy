@@ -1,4 +1,4 @@
-<mat-form-field [ngClass]="getClasses()" appearance="outline" color="accent">
+<mat-form-field [ngClass]="getClasses()" appearance="outline" >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
     <input matInput type="text" [formControl]="formController" [attr.cdkFocusInitial]="focused ? '' : null" name="{{ name }}" type="{{ type }}" title="{{ title }}" required="{{ required }}" autocomplete="off">
     <mat-error *ngIf="formController.invalid"></mat-error>

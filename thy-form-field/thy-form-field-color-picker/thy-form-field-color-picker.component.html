@@ -1,6 +1,6 @@
 
 <!-- With Form Field -->
-<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" appearance="outline" color="accent">
+<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" appearance="outline" >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
     <input matInput
         [matMenuTriggerFor]="colorMenu"

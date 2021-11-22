@@ -1,6 +1,6 @@
 <!-- Material Style -->
 
-<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" color="accent">
+<mat-form-field *ngIf="!noFormField && formFieldType === formFieldTypes.Material" [ngClass]="getClasses()" [ngStyle]="style" appearance="outline" >
     <mat-label>{{ label | translate }} {{ labelDetails | translate }}</mat-label>
     <input #input matInput *ngIf="type !== 'number'"
         [(ngModel)]="value"
