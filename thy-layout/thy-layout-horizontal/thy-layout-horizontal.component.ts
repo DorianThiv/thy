@@ -13,31 +13,40 @@ const SplitterFullSize = 100;
 })
 export class ThyLayoutHorizontalComponent {
 
+  private SplitterOpenedSize = 20;
+  private SplitterClosedSize = 0;
+  private SplitterFullSize = 100;
+
   @Input() set position(value: 'open' | 'close') {
     value === 'open' ? this.open(SplitterOpenedSize) : this.open(SplitterClosedSize);
+  }
+
+  @Input() set size(value: number) {
+    this.SplitterOpenedSize = value;
+    this.open(value);
   }
 
   @Output() dragEnd = new EventEmitter<ThyLayoutHorizontalDragEndEvent>();
 
   public get up() { return 100 - this.down; }
-  public down = SplitterOpenedSize;
+  public down = this.SplitterOpenedSize;
 
-  public get isOpen() { return this.down !== SplitterClosedSize; }
-  public get isFullscreen() { return this.down === SplitterFullSize; }
+  public get isOpen() { return this.down !== this.SplitterClosedSize; }
+  public get isFullscreen() { return this.down === this.SplitterFullSize; }
 
-  public open(percents = SplitterOpenedSize) {
+  public open(percents = this.SplitterOpenedSize) {
     this.down = percents;
   }
 
   public close() {
-    this.open(SplitterClosedSize);
+    this.open(this.SplitterClosedSize);
   }
 
   public onFullscreen() {
     if (this.isFullscreen) {
-      this.open(SplitterOpenedSize);
+      this.open(this.SplitterOpenedSize);
     } else {
-      this.open(SplitterFullSize);
+      this.open(this.SplitterFullSize);
     }
   }
 
