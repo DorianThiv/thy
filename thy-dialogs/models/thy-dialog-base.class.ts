@@ -13,12 +13,7 @@ export abstract class ThyDialogBase {
         this.dialogRef.keydownEvents().subscribe((event: KeyboardEvent) => this.onKeydown(event));
     }
 
-    protected abstract initialize(): void;
-
-    protected initializeLists() {
-    }
-
-    protected initializeFields() {
+    protected initialize(): void {
     }
 
     public async validate() {

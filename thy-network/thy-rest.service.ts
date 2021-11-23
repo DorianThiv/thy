@@ -4,6 +4,13 @@ import { COOKIE_CONSTENT_TOKEN, ThyCookiesService } from '../thy-cookies/thy-coo
 import { ThyRestDeleteRequest, ThyRestGetRequest, ThyRestPostRequest, ThyRestPutRequest } from './models/thy-rest-requests.class';
 import { ThyNetworkService } from './thy-network.service';
 
+export enum ThyHttpCode {
+  Unknown,
+  Ok = 200,
+  Unauthorized = 401,
+  NotFound = 404
+}
+
 @Injectable({
   providedIn: 'root'
 })
