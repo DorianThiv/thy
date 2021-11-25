@@ -55,9 +55,9 @@ export class ThyLayoutHorizontalComponent {
   }
 
   public onDragEnd(event: IOutputData) {
-    const thyEvent = new ThyLayoutHorizontalDragEndEvent(<number>event.sizes[0], <number>event.sizes[1]);
-    this.open(thyEvent.sizes.down);
-    this.dragEnd.emit(thyEvent);
+    // const thyEvent = new ThyLayoutHorizontalDragEndEvent(<number>event.sizes[0], <number>event.sizes[1]);
+    // this.open(thyEvent.sizes.down);
+    this.dragEnd.emit();
   }
 
 }
